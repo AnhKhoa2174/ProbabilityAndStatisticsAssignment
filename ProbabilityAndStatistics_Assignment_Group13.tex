@@ -1,0 +1,2016 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T5,T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage{adjustbox}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage[vietnam]{babel}
+\everymath{\color{RoyalBlue}}
+\renewcommand{\arraystretch}{1.5} % Khoảng cách giữa các dòng
+\usepackage[utf8]{inputenc}
+\usepackage{fontsize}
+\usepackage{enumerate}
+\fontsize{14}{16}\selectfont
+\usepackage[vietnam]{babel}
+\usepackage{array} % Gói lệnh cho bảng
+\usepackage{booktabs} % Gói lệnh cho các đường kẻ trong bảng
+\usepackage{graphicx} % Gói lệnh cho các hình ản
+\usepackage{titlesec}
+\usepackage{colortbl} % Gói lệnh cho màu sắc trong bảng
+\usepackage{algorithm}
+\usepackage{a4wide,amssymb,epsfig,latexsym,array,hhline,fancyhdr}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnam]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{multicol,longtable,amscd}
+\usepackage{diagbox}%Make diagonal lines in tables
+\usepackage{booktabs}
+\usepackage{alltt}
+\usepackage[framemethod=tikz]{mdframed}% For highlighting paragraph backgrounds
+\usepackage{caption,subcaption}
+\usepackage{lastpage}
+\usepackage[lined,boxed,commentsnumbered]{algorithm2e}
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage{graphicx}							% Standard graphics package
+\usepackage{array}
+\usepackage{tabularx, caption}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{rotating}
+\usepackage{graphics}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{epsfig}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{framed}
+\lstset{
+	basicstyle=\ttfamily,
+	language=Python,
+	numbers=left,
+	numberstyle=\tiny,
+	commentstyle=\color{gray},
+	keywordstyle=\color{blue},
+	stringstyle=\color{red},
+	breaklines=true,
+	showstringspaces=false,
+	frame=single,
+	tabsize=4,
+	morekeywords={Procedure,While,EndWhile,ForEach,EndForEach,If,EndIf,Else,EndProcedure}
+}
+\usetikzlibrary{arrows,snakes,backgrounds}
+\usepackage[unicode]{hyperref}
+\hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true} 
+%\usepackage{pstcol} 								% PSTricks with the standard color package
+%\usepackage{fancyhdr}
+\setlength{\headheight}{40pt}
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\fancyhead[L]{
+	\begin{tabular}{rl}
+		\begin{picture}(25,15)(0,0)
+			\put(0,-8){\includegraphics[width=8mm, height=8mm]{C:/Users/khach/Downloads/logo-truong-dai-hoc-bach-khoa-tphcm-trung-tam-ltdh-nguyen-thuong-hien.png}}
+			%\put(0,-8){\epsfig{width=10mm,figure=hcmut.eps}}
+		\end{picture}&
+		%\includegraphics[width=8mm, height=8mm]{hcmut.png} & %
+		\begin{tabular}{l}
+			\textbf{\bf \ttfamily University of Technology, Ho Chi Minh City}\\
+			\textbf{\bf \ttfamily Faculty of Applied Science}
+		\end{tabular} 	
+	\end{tabular}
+}
+\fancyhead[R]{
+	\begin{tabular}{l}
+		\tiny \bf \\
+		\tiny \bf 
+\end{tabular}  }
+\fancyfoot{} % clear all footer fields
+\fancyfoot[L]{\scriptsize \ttfamily Probability and Statistics Assignment (MT2013) - 2023-2024}
+\fancyfoot[R]{\scriptsize \ttfamily Page {\thepage}/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+
+%%%
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
+\makeatletter
+\newcounter {subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection .\@alph\c@subsubsubsection}
+\newcommand\subsubsubsection{\@startsection{subsubsubsection}{4}{\z@}%
+	{-3.25ex\@plus -1ex \@minus -.2ex}%
+	{1.5ex \@plus .2ex}%
+	{\normalfont\normalsize\bfseries}}
+\newcommand*\l@subsubsubsection{\@dottedtocline{3}{10.0em}{4.1em}}
+\newcommand*{\subsubsubsectionmark}[1]{}
+\makeatother
+
+\everymath{\color{blue}}%make in-line maths symbols blue to read/check easily
+\sloppy
+\captionsetup[figure]{labelfont={small,bf},textfont={small,it},belowskip=-1pt,aboveskip=-9pt}
+\captionsetup[table]{labelfont={small,bf},textfont={small,it},belowskip=-1pt,aboveskip=7pt}
+\setlength{\floatsep}{5pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{5pt plus 2pt minus 2pt}
+\setlength{\intextsep}{10pt plus 2pt minus 2pt}
+
+\begin{document}
+	
+	\begin{titlepage}
+		\begin{center}
+			\textbf{ VIETNAM NATIONAL UNIVERSITY, HO CHI MINH CITY\\
+				HO CHI MINH CITY UNIVERSITY OF TECHNOLOGY\\
+				FACULTY OF APPLIED SCIENCE}
+		\end{center}
+		
+		\vspace{1cm}
+		
+		\begin{figure}[h!]
+			\begin{center}
+				\includegraphics[width=5cm]{C:/Users/khach/Downloads/logo-truong-dai-hoc-bach-khoa-tphcm-trung-tam-ltdh-nguyen-thuong-hien.png}
+			\end{center}
+		\end{figure}
+		
+		\vspace{1cm}
+		
+		
+		\begin{center}
+			\begin{tabular}{c}
+				\multicolumn{1}{l}{\textbf{{\Huge PROBABILITY AND STATISTICS}}}\\
+				~~\\
+				\hline
+				\\
+				\multicolumn{1}{l}{\textbf{{\Large Assignment}}}\\
+				\\
+				\textbf{{\Huge Computer Parts}} \\
+				
+				\\
+			\end{tabular}
+		\end{center}
+		\begin{table}[htbp]
+			\centering
+			\begin{tabular}{>{\centering\arraybackslash}p{6cm}|>{\centering\arraybackslash}p{6cm}}
+				\hline
+				\textbf{Course code} & \textbf{MT2013} \\
+				\hline
+				\textbf{Lecturer} & \textbf{Dr. Nguyen Tien Dung} \\
+				\hline
+				\textbf{Semester} & \textbf{232} \\
+				\hline
+				\textbf{Class} & \textbf{CC02} \\
+				\hline
+				\textbf{Group} & \textbf{13} \\
+				\hline
+			\end{tabular}
+		\end{table}
+		\vspace{1cm}
+		
+		\begin{center}
+			{\footnotesize \textbf{Ho Chi Minh City, April 2024}}
+		\end{center}
+	\end{titlepage}
+	%\thispagestyle{empty}
+	\newpage
+	% Define a new format for section titles
+	\titleformat*{\section}{\raggedright\Large\bfseries}
+	
+	
+	\section*{\fontsize{16}{20}\selectfont Member List \& Workload}
+	
+	\begin{table}[htbp]
+		\centering
+		\resizebox{\textwidth}{!}{%
+			\begin{tabular}{@{\hspace{0.5cm}} r l l l l @{\hspace{0.5cm}}} % Khoảng trắng giữa các cột
+				\arrayrulecolor{black} % Màu của các đường kẻ trong bảng
+				\toprule
+				\textbf{\color{black} No.} & \textbf{\color{black} Full name} & \textbf{\color{black} Student ID} & \textbf{\color{black} Tasks} & \textbf{\color{black} Contribution} \\
+				\midrule
+				{\color{black} 1} & {\color{black} Nguyen Doan Hai Bang} & {\color{black} 2252078} & {\color{black} Background and MLR model} & {\color{black} 25\%} \\
+				{\color{black} 2} & {\color{black} Nguyen Quang Duy} & {\color{black} 2252120} & {\color{black} Descriptive statistics} & {\color{black} 25\%} \\
+				{\color{black} 3} & {\color{black} Tran Duy Duc Huy} & {\color{black} 2252263} & {\color{black} Data preprocess, ANOVA} & {\color{black} 25\%} \\
+				{\color{black} 4} & {\color{black} Huynh Mai Quoc Khang} & {\color{black} 2252293} & {\color{black} Background and MLR Model} & {\color{black} 25\%} \\
+				{\color{black} 5} & {\color{black} Tran Anh Khoa} & {\color{black} 2252362} & {\color{black} LATEX, Data preprocess, ANOVA} & {\color{black} 25\%} \\
+				\bottomrule
+			\end{tabular}%
+		}
+	\end{table}
+	\vspace{0.5cm} 
+	\section*{\fontsize{16}{20}\selectfont Lecturer's assessment}
+	\begin{table}[htbp]
+		\centering
+		\resizebox{\textwidth}{!}{%
+			\begin{tabular}{@{\hspace{0.5cm}} r l l l l @{\hspace{0.5cm}}} % Khoảng trắng giữa các cột
+				\arrayrulecolor{black} % Màu của các đường kẻ trong bảng
+				\toprule
+				\textbf{\color{black} No.} & \textbf{\color{black} Full name} & \textbf{\color{black} Student ID} & \textbf{\color{black} Assessment} & \textbf{\color{black} Score} \\
+				\midrule
+				{\color{black} 1} & {\color{black} Nguyen Doan Hai Bang} & {\color{black} 2252078} & {\color{black}Requirements analysis} & {\color{black} } \\
+				{\color{black} 2} & {\color{black} Nguyen Quang Duy} & {\color{black} 2252120} & {\color{black}Requirements analysis} & {\color{black} } \\
+				{\color{black} 3} & {\color{black} Tran Duy Duc Huy} & {\color{black} 2252263} & {\color{black}Requirements analysis} & {\color{black} } \\
+				{\color{black} 4} & {\color{black} Huynh Mai Quoc Khang} & {\color{black} 2252293} & {\color{black} Requirements analysis} & {\color{black} } \\
+				{\color{black} 5} & {\color{black} Tran Anh Khoa} & {\color{black} 2252362} & {\color{black} Requirements analysis} & {\color{black} } \\
+				\bottomrule
+			\end{tabular}%
+		}
+	\end{table}
+	\newpage
+	\tableofcontents
+	\newpage
+	\listoffigures
+	\newpage
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Dataset introduction}\label{chuan_bi}
+	\subsection{Dataset description}
+	The dataset on computer parts provides a comprehensive inventory of specifications, release dates, and release prices for Graphics Processing Units (GPUs) and Central Processing Units (CPUs). Within this dataset, various technical parameters and release dates play pivotal roles in shaping the landscape of computer hardware. \\Exploring the significance of certain technical specifications, such as clock speeds, maximum temperatures, display resolutions, power draws, and number of threads, can offer valuable insights into the performance capabilities of different computer parts. By analyzing how these parameters vary across different GPUs and CPUs, we can discern trends in technological advancements and the evolution of computing power over time.\\
+	This project will use Probability \& Statistics’s knowledge and related tools to evaluate the factors influencing the release prices of CPUs. Here are some general details of the dataset:
+	\begin{itemize}
+		\item[--] \textbf{\textcolor{black}{Title}:} Computer parts
+		\item[--] \textbf{\textcolor{black}{Source Information}:}
+		\begin{itemize}
+			\item Companies: Intel, Game-Debate, companies involved in producing the part.
+		\end{itemize}
+		\item[--] \textbf{\textcolor{black}{Number of Observations}:} 2283
+		\item[--] \textbf{\textcolor{black}{Number of Variables}:} 45 (Described in section 1.2)
+	\end{itemize}
+	\subsection{Variables description}
+	Here’s the table describing data type, unit, and description of all 45 variables available in the database \texttt{cpus.csv}.
+	\begin{longtable}{|p{3cm}|p{3cm}|p{1cm}|p{6cm}|}
+		\hline
+		\textbf{Variable} & \textbf{Variable Type} (Discrete/ Continuous/ 
+		Categorical) 
+		& \textbf{Unit} & \textbf{Description} \\
+		\hline
+		Product\_Collection & Categorical & None & The product line or group to which the processor belongs \\
+		\hline
+		Vertical\_Segment & Categorical & None & The target market or industry sector for which the processor is designed \\
+		\hline
+		Processor\_Number & Categorical & None & A unique identifier assigned to the processor model \\
+		\hline
+		Status & Categorical & None & Indicates the current status of the processor (Launched/ End of Interactive Support/ Other) \\
+		\hline
+		Launch\_Date & Categorical & None & The date when the processor was officially launched or released \\
+		\hline
+		Lithography & Continuous & nm & The semiconductor technology used to manufacture an integrated circuit \\
+		\hline
+		Recommended\_Cus tomer\_Price & Continuous &  & The manufacturer's suggested retail price for the processor \\
+		\hline
+		nb\_of\_Cores & Discrete & None & Number of independent central processing units \\
+		\hline
+		nb\_of\_Threads & Discrete & None & Number of simultaneous threads that the processor can execute \\
+		\hline
+		Processor\_Base\_Fr equency & Continuous & GHz & The rate at which the processor's transistors open and close \\
+		\hline
+		Max\_Turbo\_Freq uency & Continuous & GHz & The maximum single core frequency at which the processor is capable of operating using Intel® Turbo Boost Technology \\
+		\hline
+		Cache & Continuous & MB Smart Cache & Area of fast memory located on the processor \\
+		\hline
+		Bus\_Speed & Continuous & GT/s OPI & The speed at which data is transferred between the processor and other components \\
+		\hline
+		TDP & Continuous & W & The average power the processor dissipates when operating at Base Frequency with all cores \\
+		\hline
+		Embedded\_Options \_Available & Categorical & None & Indicates whether the processor has options for embedded applications \\
+		\hline
+		Conflict\_Free & Categorical & None & Indicates whether the processor is manufactured using conflict-free materials \\
+		\hline
+		Max\_Memory\_Size & Continuous & GB & The maximum memory capacity supported by the processor \\
+		\hline
+		Memory\_Types & Categorical & None & Types of memory supported by the processor \\
+		\hline
+		Max\_nb\_of\_Mem ory\_Channels & Discrete & None & Number of memory channels refers to the bandwidth operation for real-world application \\
+		\hline
+		Max\_Memory\_ Ba ndwidth & Continuous & GB/s & The maximum rate at which data can be read from or stored into a semiconductor memory by the processor \\
+		\hline
+		ECC\_Memory\_Su pported & Categorical & None & Indicates whether the processor supports Error-Correcting Code (ECC) memory \\
+		\hline
+		Processor\_Graphics \_ & Categorical & None & Indicates graphics processing circuitry integrated into the processor \\
+		\hline
+		Graphics\_Base\_ Frequency & Continuous & MHz & The rated/guaranteed graphics render clock frequency \\
+		\hline
+		Graphics\_Max\_ Dynamic\_Frequency & Continuous & GHz & The maximum opportunistic graphics render clock frequency that can be supported using Intel® HD \\
+		\hline
+		Graphics\_Video\_ Max\_Memory & Continuous & GB & The maximum amount of memory accessible to processor graphics \\
+		\hline
+		Graphics\_Output & Categorical & None & Types of video outputs supported by the integrated graphics \\
+		\hline
+		Support\_4k & Categorical & None & Indicates whether the integrated graphics support 4K resolution \\
+		\hline
+		Max\_Resolution\_ HDMI & Categorical & None & The maximum resolution supported by the processor via the HDMI interface \\
+		\hline
+		Max\_Resolution\_ DP & Categorical & None & The maximum resolution supported by the processor via the DP interface \\
+		\hline
+		Max\_Resolution\_ eDP\_Integrated \_Flat\_Panel & Categorical & None & The maximum resolution supported by the processor via the eDP interface \\
+		\hline
+		DirectX\_Support & Continuous & None & Indicates support for a specific version of DirectX, a Microsoft collection of APIs for handling multimedia \\
+		\hline
+		OpenGL\_Support & Categorical & None & The version of OpenGL supported by the integrated graphics \\
+		\hline
+		PCI\_Express\_ Revision & Discrete & None & The PCIe version supported by the processor \\
+		\hline
+		PCI\_Express\_ Configurations\_ & Categorical & None & Configurations of PCI Express lanes supported by the processor \\
+		\hline
+		Max\_nb\_of\_PCI\_ Express\_Lanes & Discrete & None & The maximum number of PCI Express lanes supported by the processor \\
+		\hline
+		T & Continuous & \textdegree C & The maximum temperature allowed on the chip \\
+		\hline
+		Intel\_Hyper\_Thre ading\_Technol ogy\_ & Categorical & None & Indicates whether the processor supports Intel® Hyper-Threading Technology \\
+		\hline
+		Intel\_Virtualization \_technology\_VTx\_ & Categorical & None & Indicates whether the processor supports Intel® Virtualization Technology (VT-x) \\
+		\hline
+		Intel\_64\_ & Categorical & None & Indicates whether the processor supports 64-bit architecture \\
+		\hline
+		Instruction\_Set & Categorical & None & The instruction set architecture supported by the processor \\
+		\hline
+		Instruction\_Set\_E xtensions & Categorical & None & Extensions to the instruction set architecture supported by the processor \\
+		\hline
+		Idle\_States & Categorical & None & Power-saving features that allow the processor to enter idle states when not in use \\
+		\hline
+		Thermal\_Monitori ng\_Technologies & Categorical & None & Technologies used for monitoring and managing the temperature of the processor \\
+		\hline
+		Secure\_Key & Categorical & None & Security feature that generates high-quality cryptographic keys \\
+		\hline
+		Execute\_Disable\_ Bit & Categorical & None & Security feature that helps prevent certain types of malicious code from executing \\
+		\hline
+	\end{longtable}
+	
+	\section{Background }
+	\subsection{Multiple linear regression}
+	\subsubsection{Definition}
+	Regression models are used to describe relationships between variables by fitting a line to the observed data. Regression allows you to estimate how a dependent variable changes as the independent variable(s) change.\\
+	Multiple linear regression, also known simply as multiple regression, is a statistical technique that uses several explanatory variables to predict the outcome of a response variable. It allows you to estimate how the dependent variable changes as the independent variables change. This type of regression is used when you have more than one explanatory variable and is an extension of simple linear regression, which involves only one independent variable. Multiple linear regression is a more specific calculation than simple linear regression. For straight-forward relationships, simple linear regression may easily capture the relationship between the two variables. However, for more complex relationships requiring more consideration, multiple linear regression is often better.
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[scale=1]{"C:/Users/khach/OneDrive/Desktop/XSTK/1.png"}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Single linear regression vs Multiple linear regression}
+		\label{fig:data_table}
+	\end{figure}
+	Multiple linear regression is applicable in scenarios where we want to know:
+	\begin{itemize}
+		\item How strong the relationship is between two or more independent variables and one dependent variable (e.g. how rainfall, temperature, and amount of fertilizer added affect crop growth).
+		\item The value of the dependent variable at a certain value of the independent variables (e.g. the expected yield of a crop at certain levels of rainfall, temperature, and fertilizer addition).
+	\end{itemize}
+	\subsubsection{Assumption}
+	The multiple regression model is based on the following assumptions:
+	\begin{itemize}
+		\item[1.]Homogeneity of variance: The variance of the errors is constant across all the values of the independent variable.
+		\item[2.]Independence of observations: the observations in the dataset were collected using statistically valid sampling methods, and there are no hidden relationships among variables.
+	\end{itemize}
+	In multiple linear regression, it is possible that some of the independent variables are actually correlated with one another, so it is important to check these before developing the regression model. If two independent variables are too highly correlated (r2 > $\textcolor{black}{\sim 0.6}$), then only one of them should be used in the regression model.
+	\begin{itemize}
+		\item[3.]Normality: The data follows a normal distribution with a mean of 0 and variance $\textcolor{black}{\sigma}$.
+		\item[4.]Linearity: The relationship between the independent variables and the dependent variable is linear.
+	\end{itemize}
+	\subsubsection{Formula}
+	The formula for simple linear regression is:
+	$\textcolor{black}{\\Y = C_0 + C_1X + \varepsilon}$\\
+	Where: 
+	\begin{itemize}
+		\item \textcolor{black}{\( Y \)}: the dependent variable
+		\item \textcolor{black}{\( X \)}: the independent variable
+		\item \textcolor{black}{\( C_0 \)}: the y-intercept (constant term)
+		\item \textcolor{black}{\( C_{1}X \)}: the slope of line
+		\item \textcolor{black}{\( \epsilon \)}: the model's error term
+	\end{itemize}
+	The formula for multiple linear regression is: $\textcolor{black}{y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_n x_n + \varepsilon}$\\
+	Where: 
+	\begin{itemize}
+		\item \( y \): the dependent variable
+		\item \( \beta_0 \): the y-intercept (constant term)
+		\item \( \beta_1, \beta_2, \ldots, \beta_n \): the regression coefficients for each independent variable
+		\item \( x_1, x_2, \ldots, x_n \): the independent variables
+		\item \( \epsilon \): the model's error term
+	\end{itemize}
+	\subsection{Analysis of Variance (ANOVA)}
+	\subsubsection{Definition}
+	ANOVA is a statistical method used to test differences between two or more means and determine if there is a significant difference between them. It is similar to the t-test, but the t-test is generally used for comparing two means, while ANOVA is used when you have more than two means to compare.\\
+	The ANOVA test allows a comparison of more than two groups at the same time to determine whether a relationship exists between them. The result of the ANOVA formula, the F statistic (also called the F-ratio), allows for the analysis of multiple groups of data to determine the variability between samples and within samples. If no real difference exists between the tested groups, which is called the null hypothesis, the result of the ANOVA's F-ratio statistic will be close to 1.
+	\subsubsection{One-Way vs. Two-Way ANOVA}
+	The two most common types of ANOVAs are the one-way ANOVA and the two-way ANOVA. One-way or two-way refers to the number of independent variables in your analysis of variance tests.\\
+	A one-way ANOVA evaluates the impact of a sole factor on a sole response variable. It determines whether all the samples are the same. The one-way ANOVA is used to determine whether there are any statistically significant differences between the means of three or more independent (unrelated) groups.\\
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[scale=1]{"C:/Users/khach/OneDrive/Desktop/XSTK/2.png"}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{One-way ANOVA}
+		\label{fig:data_table}
+	\end{figure}
+	\linebreak
+	A two-way ANOVA is an extension of the one-way ANOVA. With a one-way, you have one independent variable affecting a dependent variable. With a two-way ANOVA, there are two independents. For example, a two-way ANOVA allows a company to compare worker productivity based on two independent variables, such as salary and skill set. It is utilized to observe the interaction between the two factors and tests the effect of two factors at the same time.
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[scale=1]{"C:/Users/khach/OneDrive/Desktop/XSTK/3.png"}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Two-way ANOVA}
+		\label{fig:data_table}
+	\end{figure}
+	\subsubsection{Assumption}
+	There are several assumptions that must be met in order for ANOVA to be valid:
+	\begin{itemize}
+		\item [1.]Independence of observations: This means that the observations are not related to each other in any way.
+		\item [2.]Normality: The data within each group should be normally distributed.
+		
+		\item [3.]Equal variances: The variances of the groups being compared should be approximately equal.
+	\end{itemize}
+	\subsubsection{Formula}
+	\begin{table}[htbp]
+		\centering
+		\caption{ANOVA Table}
+		\arrayrulecolor{black}
+		\label{tab:anova_table}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			\textcolor{black}{Source of Variation} & \textcolor{black}{Sum of Squares} & \textcolor{black}{Degree of Freedom} & \textcolor{black}{Mean Squares} & \textcolor{black}{F Value} \\
+			\hline
+			\textcolor{black}{Between Groups} & \textcolor{black}{SSB = \textcolor{black}{\( \sum n_j (X_j - \bar{X})^2 \)}} & \textcolor{black}{\( df_1 = k - 1 \)} & \textcolor{black}{MSB = \( \frac{SSB}{k - 1} \)} & \textcolor{black}{\( F = \frac{MSB}{MSE} \)} \\
+			\hline
+			\textcolor{black}{Error} & \textcolor{black}{SSE = \( \sum \sum (X - X_j)^2 \)} & \textcolor{black}{\( df_2 = N - k \)} & \textcolor{black}{MSE = \( \frac{SSE}{N - k} \)} & \textcolor{black}{} \\
+			\hline
+			\textcolor{black}{Total} & \textcolor{black}{SST = SSB + SSE} & \textcolor{black}{\( df_3 = N - 1 \)} & \textcolor{black}{} & \textcolor{black}{} \\
+			\hline
+		\end{tabular}
+	\end{table}
+	\subsection{Comparing Multiple linear regression model with ANOVA}
+	Multiple linear regression and ANOVA are both statistical modeling techniques used to analyze the relationship between a dependent variable and one or more independent variables. However, they differ in their assumptions, applications, and the way they are presented.\\
+	Multiple linear regression is a generalization of simple linear regression, which models the relationship between a dependent variable and a single independent variable. Multiple linear regression extends this concept by allowing for multiple independent variables. It is used when there is a continuous dependent variable and one or more independent variables, which can be either continuous or categorical. The model estimates the coefficients of the independent variables, which represent the change in the dependent variable for a one-unit change in the independent variable, while controlling for the effects of other independent variables.\\
+	On the other hand, ANOVA (Analysis of Variance) is a statistical technique used to compare the means of a dependent variable across two or more groups defined by one or more categorical independent variables. ANOVA tests the null hypothesis that all the group means are equal against the alternative hypothesis that at least one group mean is different. ANOVA partitions the total variance of the dependent variable into variance due to the independent variable and variance due to random error.\\
+	In summary, multiple linear regression and ANOVA are both useful statistical modeling techniques, but they are used in different contexts and for different purposes. Multiple linear regression is used to model the relationship between a continuous dependent variable and multiple independent variables, while ANOVA is used to compare the means of a continuous dependent variable across two or more groups defined by one or more categorical independent variables.
+	\section{Hypothesis testing}
+	\subsection{Definition}
+	Hypothesis testing can be defined as a statistical tool that is used to identify if the results of an experiment are meaningful or not. It involves setting up a null hypothesis and an alternative hypothesis. These two hypotheses will always be mutually exclusive. This means that if the null hypothesis is true then the alternative hypothesis is false and if the alternative hypothesis is true, the null hypothesis is necessarily false.\\
+	The null hypothesis ($H_0$) is a concise mathematical statement that is used to indicate that there is no difference between two possibilities. In other words, there is no difference between certain characteristics of data. This hypothesis assumes that the outcomes of an experiment are based on chance alone. Hypothesis testing is used to conclude if the null hypothesis can be rejected or not.\\
+	The alternative hypothesis ($H_1$)) is an alternative to the null hypothesis. It is used to show that the observations of an experiment are due to some real effect. and indicates that there is a statistical significance between two possible outcomes.\\
+	In hypothesis testing, the $p$-value is used to indicate whether the results obtained after conducting a test are statistically significant or not. It also indicates the probability of making an error in rejecting or not rejecting the null hypothesis. This value is always a number between 0 and 1. The $p$-value is compared to an alpha level or significance level. The alpha level can be defined as the acceptable risk of incorrectly rejecting the null hypothesis. The alpha level is usually chosen between 1\% to 5\%.
+	\subsection{One Tailed and Two Tailed Hypothesis Testing}
+	One tailed hypothesis testing is done when the rejection region is only in one direction. It can also be known as directional hypothesis testing because the effects can be tested in one direction only. Two tailed hypothesis testing is done when the critical region lies on both sides of the sampling distribution. It is also known as a non - directional hypothesis testing method.\\
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{"C:/Users/khach/OneDrive/Desktop/XSTK/Hypothesis_1.png"}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Right tailed hypothesis testing}
+		\label{fig:data_table}
+	\end{figure}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{"C:/Users/khach/OneDrive/Desktop/XSTK/Hypothesis_2.png"}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Left tailed hypothesis testing}
+		\label{fig:data_table}
+	\end{figure}
+		\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{"C:/Users/khach/OneDrive/Desktop/XSTK/Hypothesis_3.png"}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Two tailed hypothesis testing}
+		\label{fig:data_table}
+	\end{figure}
+	\section{Data pre-processing}
+	\subsection{Data reading}
+	We need to install necessary libraries first:
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	# Library
+	# install.packages("ggplot2")
+	# install.packages("corrplot")
+	# install.packages("RColorBrewer")
+	# install.packages("DescTools")
+	library(ggplot2)
+	library(corrplot)
+	library(RColorBrewer)
+	library(DescTools)
+	\end{lstlisting}
+	Import Data: Use the read.csv function to import \texttt{Intel\_CPUs.csv} data file into RStudio.\\
+	Display Data: Utilize R Markdown to create a structured document.\\
+	Knit to HTML: After setting up R Markdown document, Knit it to HTML. This process will execute the R code chunks, including importing and displaying the data, and generate an HTML file.\\
+	
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	#Read CPUs data
+	Intel_CPUs = read.csv("D:/BTL_XSTK_HK232/Intel_CPUs.csv",na.strings = c("", "N/A"))
+	head(Intel_CPUs,6)
+	\end{lstlisting}
+	\vspace{0.5cm}
+	Here, the command \texttt{head(CPUs\_DATA, 6)} is used to display the first 6 rows of data stored in the object \texttt{CPUs\_DATA}.\\
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=1\textwidth, frame}
+			\includegraphics[scale=1]{C:/Users/khach/OneDrive/Desktop/XSTK/4.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Data table [1]}
+		\label{fig:data_table}
+	\end{figure}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=1\textwidth, frame}
+			\includegraphics[scale=1]{C:/Users/khach/OneDrive/Desktop/XSTK/5.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Data table [2]}
+	\end{figure}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=1\textwidth, frame}
+			\includegraphics[scale=1]{C:/Users/khach/OneDrive/Desktop/XSTK/6.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Data table [3]}
+	\end{figure}
+	\newpage
+	We select specific columns from the \texttt{{{Intel\_CPUs}}} dataset, presumably for further analysis.
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	# The selected columns include information about the vertical segment, status, lithography, recommended customer price, number of cores, number of threads, processor base frequency, TDP (Thermal Design Power), max memory size.
+	CPUs_data = Intel_CPUs[,c("Vertical_Segment","Status","Lithography"
+	,"Recommended_Customer_Price","nb_of_Cores","nb_of_Threads"
+	,"Processor_Base_Frequency","TDP","Max_Memory_Size")]
+	\end{lstlisting}
+	\subsection{Checking missing values}
+	There exists N/A values in this table. To determine the number of N/A values separately, we do as followings:\\
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	# Calculate the total number of missing values for each column in the CPUs_data dataset using the apply() function
+	print(apply(is.na(CPUs_data),2,sum))
+	\end{lstlisting}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/8.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Number of missing values of chosen variables}
+	\end{figure}
+	\textbf{CONCLUSION:}
+	\begin{itemize}
+		\item Vertical\_Segment has 0 missing value.
+		\item Status has 0 missing values.
+		\item Lithography has 71 missing values.
+		\item Recommended\_Customer\_Price has 982 missing values.
+		\item nb\_of\_Cores has 0 missing values.
+		\item nb\_of\_Threads has 856 missing values.
+		\item Processor\_Base\_Frequency has 18 missing values.
+		\item TDP has 67 missing values.
+		\item Max\_Memory\_Size has 880 missing values.
+	\end{itemize} 
+	To fill these missing values in each column, we replace with the corresponding mean or median value of each variable. Before that, as there are variables with units, we should remove these units for afterwards calculations.
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	# Process lithography
+	CPUs_data$Lithography <- as.double(gsub(" nm$", "", CPUs_data$Lithography))
+	median_Lithography <- median(CPUs_data$Lithography, na.rm = TRUE)
+	CPUs_data$Lithography[is.na(CPUs_data$Lithography)] <- median_Lithography
+	
+	# Process Recommended Customer Price
+	recommend_price <- function(price_range) {
+		if(grepl('-', price_range)) {
+			range <- strsplit(price_range, "-")[[1]]
+			return((as.double(range[1]) + as.double(range[2])) / 2)
+		}
+		return (price_range)
+	}
+	CPUs_data$Recommended_Customer_Price <- gsub("\\$", "", CPUs_data$Recommended_Customer_Price)
+	CPUs_data$Recommended_Customer_Price <- sapply(CPUs_data$Recommended_Customer_Price, recommend_price) 
+	CPUs_data$Recommended_Customer_Price <- as.double(CPUs_data$Recommended_Customer_Price)
+	median_Recommended_Customer_Price <- median(CPUs_data$Recommended_Customer_Price, na.rm = TRUE)
+	CPUs_data$Recommended_Customer_Price[is.na(CPUs_data$Recommended_Customer_Price)] <- median_Recommended_Customer_Price
+	
+	# Process number of threads
+	median_nb_of_Threads <- median(CPUs_data$nb_of_Threads, na.rm = TRUE)
+	CPUs_data$nb_of_Threads[is.na(CPUs_data$nb_of_Threads)] <- median_nb_of_Threads
+	
+	# Process base frequency
+	base_frequency <- function(f) {
+		if (grepl(' GHz', f)) {
+			return (as.double(gsub(" GHz", "", f)) * 1000)
+		}
+		return (as.double(gsub(" MHz", "", f)))
+	}
+	CPUs_data$Processor_Base_Frequency <- as.integer(sapply(CPUs_data$Processor_Base_Frequency, base_frequency))
+	mean_Processor_Base_Frequency <- mean(CPUs_data$Processor_Base_Frequency, na.rm = TRUE)
+	CPUs_data$Processor_Base_Frequency[is.na(CPUs_data$Processor_Base_Frequency)] <- mean_Processor_Base_Frequency
+	
+	# Process TDP
+	CPUs_data$TDP <- as.double(gsub(" W", "", CPUs_data$TDP))
+	median_TDP <- median(CPUs_data$TDP, na.rm = TRUE)
+	CPUs_data$TDP[is.na(CPUs_data$TDP)] <- median_TDP
+	
+	# Process max memory size
+	max_mem_size_clean <- function(size) {  
+		if(grepl('G', size)) {
+			return (as.double(gsub(" GB", "", size)))
+		}
+		return (as.double(gsub(" TB", "", size)) * 1024)
+	}
+	CPUs_data$Max_Memory_Size <- sapply(CPUs_data$Max_Memory_Size, max_mem_size_clean)     
+	median_Max_Memory_Size <- median(CPUs_data$Max_Memory_Size, na.rm = TRUE)
+	CPUs_data$Max_Memory_Size[is.na(CPUs_data$Max_Memory_Size)] <- median_Max_Memory_Size
+	\end{lstlisting}
+	\section{Descriptive statistics}
+	Descriptive statistics help to describe and summarize the dataset, providing insights into its central tendency, variability, distribution, and other relevant properties. This is an important step, since it gives a visual view about the sample data.
+	\subsection{Data statistics}
+	At first, the dataset is categorized into two main types of variables: numerical variables and categorical variables. \\
+	This classification helps to identify the nature and characteristics of different variables in the dataset. The numerical variables include "Lithography", "Recommended\_Customer\_Price", "nb\_of\_Cores", "nb\_ of\_Threads", "TDP", "Processor\_Base\_Frequency"and "Max\_Memory \_Size". The categorical variable includes "Vertical\_Segment" and "Status".\\
+	For numerical variables, we calculate the descriptive statistical values including mean, standard deviation, median, first quantile, third quantile, minimum value, and maximum value using built-in RStudio functions.\\
+	\textbf{Input 1:}
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	# Numerical variables
+	numerical_cols = c("Lithography","Recommended_Customer_Price"
+	,"nb_of_Cores","nb_of_Threads","TDP", 
+	"Processor_Base_Frequency", "Max_Memory_Size")
+	# Descriptive statistical table
+	summary_numeric_table <- data.frame(
+	Staticstic=c("Mean", "Sd", "Median", 
+	"First Quantile", "Third Quantile","Min", "Max")
+	)
+	for (i in numerical_cols){
+		mean<- mean(CPUs_data[[i]])
+		sd <- sd(CPUs_data[[i]])
+		median <- median(CPUs_data[[i]])
+		first_quantile <- quantile(CPUs_data[[i]], probs = 0.25)
+		third_quantile <- quantile(CPUs_data[[i]], probs = 0.75)
+		min <- min(CPUs_data[[i]])
+		max <- max(CPUs_data[[i]])
+		summary_numeric_table[[i]] <- c(mean, sd, median, 
+		first_quantile, third_quantile, min, max)
+	}
+	colnames(summary_numeric_table)[-1] <- numerical_cols
+	
+	\end{lstlisting}
+	\textbf{Output1:}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=1\textwidth, frame}
+			\includegraphics[scale=1]{C:/Users/khach/OneDrive/Desktop/XSTK/22.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Statistical values of the numerical variables}
+	\end{figure}
+	\linebreak
+	For categorical variable, we create a table to summarize the count, unique types, mode and frequency of the mode. By summarizing these statistics in a table, we can gain a better understanding about the distribution and characteristics of the categorical variable.\\
+	\textbf{Input 2}
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	# Categorical variables
+	categorical_cols = c("Vertical_Segment", "Status")
+	summary_categorical_table <- data.frame(
+	Staticstic = c("Count","Unique","Mode","Freq")
+	)
+	for (i in categorical_cols) {
+		count <- length(CPUs_data[[i]])
+		unique <- length(unique(CPUs_data[[i]]))
+		mode <- Mode(CPUs_data[[i]])
+		freq <- attr(mode,"freq")
+		summary_categorical_table <- 
+		cbind(summary_categorical_table,new_col = c(count, unique, mode, freq))
+	}
+	colnames(summary_categorical_table) <- c("", categorical_cols)
+	\end{lstlisting}
+		\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/33.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Categorical variables table}
+	\end{figure}
+	\newpage
+	\subsection{Data visualization}
+	In this section, we will explore the visual representations of the dataset to get a comprehensive and intuitive understanding of the data. Through various graphs and plots, this section aims to reveal patterns, trends, distributions and also relationships in the data.
+	\subsubsection{Distribution of Numerical Variables}
+	We employed the ggplot2 package to generate our visualization. Firstly, we show the distributions of all the numerical data using density histograms.\\
+	\textbf{Input 1}
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	# Density Histogram Lithography
+	ggplot(CPUs_data, aes(x = Lithography)) +
+	geom_histogram(aes(y = ..density..), binwidth = 13, color = "black", fill = "white") +
+	geom_density(colour = "black",fill = 4, alpha = 0.2, bw = 7) +
+	scale_x_continuous(breaks = seq(0, 250, by = 50)) +
+	scale_y_continuous(breaks = seq(0, 0.05, by = 0.01)) +
+	labs(x = "Lithography", y = "Density", title = "Density Histogram of Lithography") +
+	theme(plot.title = element_text(hjust = 0.5))
+	# Density Histogram Recommended_Customer_Price
+	ggplot(CPUs_data, aes(x = Recommended_Customer_Price)) +
+	geom_histogram(aes(y = ..density..), binwidth = 500, color = "black", fill = "white") +
+	geom_density(colour = "black",fill = 4, alpha = 0.2, bw = 250) +
+	scale_x_continuous(breaks = seq(0, 8000, by = 2000)) +
+	labs(x = "Recommended_Customer_Price", y = "Density", 
+	title = "Density Histogram of Recommended Customer Price") +
+	theme(plot.title = element_text(hjust = 0.5))
+	# Density Histogram nb_of_Cores
+	ggplot(CPUs_data, aes(x = nb_of_Cores)) +
+	geom_histogram(aes(y = ..density..), binwidth = 5, color = "black", fill = "white") +
+	geom_density(colour = "black",fill = 4, alpha = 0.2, bw = 3) +
+	scale_x_continuous(breaks = seq(0, 80, by = 10)) +
+	labs(x = "Number of Cores", y = "Frequency",
+	title = "Density Histogram of Number of Cores") +
+	theme(plot.title = element_text(hjust = 0.5))
+	# Density Histogram nb_of_Threads
+	ggplot(CPUs_data, aes(x = nb_of_Threads)) +
+	geom_histogram(aes(y = ..density..), binwidth = 4, color = "black", fill = "white") +
+	geom_density(colour = "black",fill = 4, alpha = 0.2, bw = 2) +
+	scale_x_continuous(breaks = seq(0, 140, by = 20)) +
+	labs(x = "Number of Threads", y = "Density",
+	title = "Density Histogram of Number of Threads") +
+	theme(plot.title = element_text(hjust = 0.5))
+	# Density Histogram Processor_Base_Frequency
+	ggplot(CPUs_data, aes(x = Processor_Base_Frequency)) +
+	geom_histogram(aes(y = ..density..), binwidth = 400, color = "black", fill = "white") +
+	geom_density(colour = "black",fill = 4, alpha = 0.2, bw = 200) +
+	scale_x_continuous(breaks = seq(0, 4300, by = 1000)) +
+	labs(x = "Processor Base Frequency", y = "Density",
+	title = "Density Histogram of Processor Base Frequency") +
+	theme(plot.title = element_text(hjust = 0.5))
+	# Density Histogram TDP
+	ggplot(CPUs_data, aes(x = TDP)) +
+	geom_histogram(aes(y = ..density..), binwidth = 20, color = "black", fill = "white") +
+	geom_density(colour = "black",fill = 4, alpha = 0.2, bw = 10) +
+	scale_x_continuous(breaks = seq(0, 300, by = 50)) +
+	labs(x = "TDP", y = "Density", title = "Density Histogram of TDP") +
+	theme(plot.title = element_text(hjust = 0.5))
+	# Density Histogram Max_Memory_Size
+	ggplot(CPUs_data, aes(x = Max_Memory_Size)) +
+	geom_histogram(aes(y = ..density..), binwidth = 400, color = "black", fill = "white") +
+	geom_density(colour = "black",fill = 4, alpha = 0.2, bw = 200) +
+	scale_x_continuous(breaks = seq(0, 4200, by = 1000)) +
+	labs(x = "Max Memory Size", y = "Density", 
+	title = "Density Histogram of Max Memory Size") +
+	theme(plot.title = element_text(hjust = 0.5))
+	\end{lstlisting}
+	\textbf{Output 1}
+	\begin{figure}[htbp]
+		\centering
+		\begin{minipage}[t]{0.45\textwidth}
+			\centering
+			\begin{adjustbox}{width=\textwidth, frame}
+				\includegraphics[width=0.7\linewidth]{C:/Users/khach/OneDrive/Desktop/XSTK/34.png}
+			\end{adjustbox}
+			\captionsetup{justification=centering}
+			\vspace{0.5cm}
+			\caption{Density Histogram of Lithography}
+		\end{minipage}\hfill
+		\begin{minipage}[t]{0.45\textwidth}
+			\centering
+			\begin{adjustbox}{width=\textwidth, frame}
+				\includegraphics[width=0.7\linewidth]{C:/Users/khach/OneDrive/Desktop/XSTK/35.png}
+			\end{adjustbox}
+			\captionsetup{justification=centering}
+			\vspace{0.5cm}
+			\caption{Density Histogram of
+				Recommended Customer Price
+			}
+		\end{minipage}
+	\end{figure}
+	\begin{figure}[htbp]
+		\centering
+		\begin{minipage}[t]{0.45\textwidth}
+			\centering
+			\begin{adjustbox}{width=\textwidth, frame}
+				\includegraphics[width=0.7\linewidth]{C:/Users/khach/OneDrive/Desktop/XSTK/36.png}
+			\end{adjustbox}
+			\captionsetup{justification=centering}
+			\vspace{0.5cm}
+			\caption{Density Histogram of Number of Cores}
+		\end{minipage}\hfill
+		\begin{minipage}[t]{0.45\textwidth}
+			\centering
+			\begin{adjustbox}{width=\textwidth, frame}
+				\includegraphics[width=0.7\linewidth]{C:/Users/khach/OneDrive/Desktop/XSTK/37.png}
+			\end{adjustbox}
+			\captionsetup{justification=centering}
+			\vspace{0.5cm}
+			\caption{Density Histogram of Number of Threads}
+		\end{minipage}
+	\end{figure}
+	\begin{figure}[htbp]
+		\centering
+		\begin{minipage}[t]{0.45\textwidth}
+			\centering
+			\begin{adjustbox}{width=\textwidth, frame}
+				\includegraphics[width=0.7\linewidth]{C:/Users/khach/OneDrive/Desktop/XSTK/38.png}
+			\end{adjustbox}
+			\captionsetup{justification=centering}
+			\vspace{0.5cm}
+			\caption{Density Histogram of Processor Base Frequency}
+		\end{minipage}\hfill
+		\begin{minipage}[t]{0.45\textwidth}
+			\centering
+			\begin{adjustbox}{width=\textwidth, frame}
+				\includegraphics[width=0.7\linewidth]{C:/Users/khach/OneDrive/Desktop/XSTK/39.png}
+			\end{adjustbox}
+			\captionsetup{justification=centering}
+			\vspace{0.5cm}
+			\caption{Density Histogram of TDP}
+		\end{minipage}
+	\end{figure}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/40.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Density Histogram of Max Memory Size}
+	\end{figure}
+	\newpage
+	\section*{Comment:}
+	When examining the seven histograms, it is evident that the majority of them display right-skewed distributions, except for the Figure 17. The peaks of these histograms are located towards the left side, suggesting that the tail of the distribution extends towards the higher values, while the majority of the values are concentrated towards the lower end. \\
+	% Your comment 
+	\textcolor{blue}{This makes the use of Median Imputation for these variables appropriate as it addresses the skewness while preserving the overall balance of the distribution.}\\
+	As for the density histogram of Processor Base Frequency, the histogram appears to be almost symmetrical. This suggests that the distribution of the variable is roughly balanced.\\
+	% Your comment 
+	\textcolor{blue}{Mean Imputation would be a suitable method to handle missing data for this variable.}
+	\subsubsection{Visualization of Categorical Variable}
+	\textbf{Input 1}
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	# Bar plot Vertical_Segment
+	Vertical_Segment_table <- data.frame(table(CPUs_data$Vertical_Segment))
+	colnames(Vertical_Segment_table) <- c("Vertical_Segment", "Frequency")
+	
+	ggplot(summary_categorical_table, 
+	aes(x = Vertical_Segment, y = Frequency, fill = Vertical_Segment)) + 
+	geom_bar(stat = "identity", color = "black") +
+	labs(x = "Vertical Segment", y = "Count", 
+	title = "Bar Chart of Vertical Segment") +
+	theme(plot.title = element_text(hjust = 0.5)) +
+	theme(legend.position="none")
+	\end{lstlisting}
+	\textbf{Output 1}\\
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/41.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Bar Chart of Vertical Segment}
+	\end{figure}\\
+	It is evident from the bar chart that the Mobile bar is the tallest, suggesting that the majority of CPUs in the dataset is used for mobile. On the other hand, the Embedded bar is the shortest, indicating that this category has the lowest popularity.\\
+	\textbf{Input 2}
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	# Bar plot Status
+	Status_table <- data.frame(table(CPUs_data$Status))
+	colnames(Status_table) <- c("Status", "Frequency")
+	
+	ggplot(Status_table, 
+	aes(x = Status, y = Frequency, fill = Status)) + 
+	geom_bar(stat = "identity", color = "black") +
+	labs(x = "Status", y = "Count", 
+	title = "Bar Chart of Status") +
+	theme(plot.title = element_text(hjust = 0.5)) +
+	theme(legend.position="none")
+	\end{lstlisting}
+	\textbf{Output 2}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/42.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Bar Chart of Status}
+	\end{figure}
+	\newpage
+	Based on the bar chart, the launched CPUs have the highest count among the four types mentioned. Conversely, the number of annouced CPUs is relatively low.
+	\subsubsection{Relationship between Independent Variables and Dependent Variable}
+	\textbf{Input 1}
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	# Scatter plot between Recommended_Customer_Price and Lithography
+	ggplot(CPUs_data, aes(x = Lithography, y = Recommended_Customer_Price)) +
+	geom_point() +
+	geom_smooth(method = "lm") +
+	labs(x = "Lithography", y = "Recommended Customer Price", 
+	title = "Scatterplot of Recommended Customer Price vs Lithography") +
+	theme(plot.title = element_text(hjust = 0.5, size = 13))
+	# Scatter plot between Recommended_Customer_Price and nb_of_Cores
+	ggplot(CPUs_data, aes(x = nb_of_Cores, y = Recommended_Customer_Price)) +
+	geom_point() +
+	geom_smooth(method = "lm") +
+	labs(x = "Number of Cores", y = "Recommended Customer Price", 
+	title = "Scatterplot of Recommended Customer Price 
+	vs Number of Cores") +
+	theme(plot.title = element_text(hjust = 0.5, size = 13))
+	# Scatter plot between Recommended_Customer_Price and nb_of_Threads
+	ggplot(CPUs_data, aes(x = nb_of_Threads, y = Recommended_Customer_Price)) +
+	geom_point() +
+	geom_smooth(method = "lm") +
+	labs(x = "Number of Threads", y = "Recommended Customer Price", 
+	title = "Scatterplot of Recommended Customer Price 
+	vs Number of Threads") +
+	theme(plot.title = element_text(hjust = 0.5, size = 13))
+	# Scatter plot between Recommended_Customer_Price and TDP
+	ggplot(CPUs_data, aes(x = TDP, y = Recommended_Customer_Price)) +
+	geom_point() +
+	geom_smooth(method = "lm") +
+	labs(x = "TDP", y = "Recommended Customer Price", 
+	title = "Scatterplot of Recommended Customer Price vs TDP") +
+	theme(plot.title = element_text(hjust = 0.5, size = 13))
+	# Scatter plot between Recommended_Customer_Price and Max_Memory_Size
+	ggplot(CPUs_data, aes(x = Max_Memory_Size, y = Recommended_Customer_Price)) +
+	geom_point() +
+	geom_smooth(method = "lm") +
+	labs(x = "Max Memory Size", y = "Recommended Customer Price", 
+	title = "Scatterplot of Recommended Customer Price 
+	vs Max Memory Size") +
+	theme(plot.title = element_text(hjust = 0.5, size = 13))
+	\end{lstlisting}
+	\textbf{Output 1}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.5\textwidth, frame}
+			\includegraphics[scale=0.5]{C:/Users/khach/OneDrive/Desktop/XSTK/43.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Scatterplot of Recommended Customer Price vs Lithography}
+	\end{figure}
+	\newpage
+	The scatterplot above depicts a downward line of best fit, indicating a negative correlation between the variables. In real-life scenarios, the decrease in CPU lithography corresponds to an increase in required manufacturing technology. This advanced technology leads to higher production costs, resulting in an increased price for the CPU.
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.5\textwidth, frame}
+			\includegraphics[scale=0.5]{C:/Users/khach/OneDrive/Desktop/XSTK/44.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Scatterplot of Recommended Customer Price vs Number of Cores}
+	\end{figure}
+	\\
+	The data points are scattered throughout the plot, with some points appearing to be denser than others. Based on the overall trend of the plot, it suggests that there is a positive correlation between the number of cores and the recommended customer price. This means that as the number of cores increases, the recommended customer price tends to increase as well.
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.5\textwidth, frame}
+			\includegraphics[scale=0.5]{C:/Users/khach/OneDrive/Desktop/XSTK/45.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Scatterplot of Recommended Customer Price vs Number of Threads}
+	\end{figure}
+	\newpage
+	The line of best fit of the above scatterplot suggests that there is a positive correlation between the number of threads and the recommended customer price.
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.5\textwidth, frame}
+			\includegraphics[scale=0.5]{C:/Users/khach/OneDrive/Desktop/XSTK/46.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Scatterplot of Recommended Customer Price vs Processor Base Frequency}
+	\end{figure}
+	\\
+	The scatterplot demonstrates a line of best fit that is nearly parallel to the x-axis. This suggests a weak or no correlation between the number of cores and the recommended customer price. The scattered distribution of data points further indicates a lack of a clear pattern between these variables.
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.5\textwidth, frame}
+			\includegraphics[scale=0.5]{C:/Users/khach/OneDrive/Desktop/XSTK/47.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Scatterplot of Recommended Customer Price vs TDP}
+	\end{figure}
+	\\
+	In the scatterplot above, it appears that the data points are gathered at one place rather than scattered throughout the plot, indicating a strong relationship between the recommended price and TDP. Based on the line of best fit, it seems that as TDP increases, the recommended price also tends to increase.
+	\newpage
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.5\textwidth, frame}
+			\includegraphics[scale=0.5]{C:/Users/khach/OneDrive/Desktop/XSTK/48.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Scatterplot of Recommended Customer Price vs Max Memory Size}
+	\end{figure}
+	Based on the scatterplot, we can observe that there is a positive relationship between customer price and memory size. As customer price increases, memory size tends to increase as well.
+	\section*{Comment:}
+	It is clear that there are some outliers present in the data and throughout these scatterplots. These outliers exist mainly due to the Median Imputation of the Recommended\_Customer\_Price (Md = 255.5) and the fact that Recommended\_Customer\_Price has many missing values. This forms a line of outliers that is parallel to the x-axis, which does not align with the general trend of the scatterplot. These outliers may have some impact on the accuracy of the line of best fit and overall understanding of the data. \\
+	\textbf{Input 2}
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	# Box plot between Recommended_Customer_Price and Vertical_Segment
+	ggplot(data = CPUs_data, aes(x = Vertical_Segment, y = Recommended_Customer_Price, fill = Vertical_Segment)) +
+	geom_boxplot() +
+	scale_y_continuous(trans = "log10") +
+	labs(x = "Vertical Segment", y = "Recommended Customer Price", 
+	title = "Boxplot of Recommended Customer Price vs Vertical Segment") +
+	theme(plot.title = element_text(hjust = 0.5)) +
+	theme(legend.position="none")
+	# Box plot between Recommended_Customer_Price and Status
+	ggplot(data = CPUs_data, aes(x = Status, y = Recommended_Customer_Price, fill = Status)) +
+	geom_boxplot() +
+	scale_y_continuous(trans = "log10") +
+	labs(x = "Status", y = "Recommended Customer Price", 
+	title = "Boxplot of Recommended Customer Price vs Status") +
+	theme(plot.title = element_text(hjust = 0.5)) +
+	theme(legend.position="none")
+	\end{lstlisting}
+	\newpage
+	\textbf{Output 2}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.5\textwidth, frame}
+			\includegraphics[scale=0.5]{C:/Users/khach/OneDrive/Desktop/XSTK/49.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Boxplot of Recommended Customer Price and Vertical Segment}
+	\end{figure}
+	\\
+	There are noticeable differences between four boxes suggests significant variations in the Recommended Customer Price and Vertical Segment across the different groups. The Embedded box appears larger than the others, it suggests that the data within this group has a wider spread or greater variability compared to the other groups. Conversely, the Mobile box appears almost as a line, meaning that the minimum, maximum, and quartile values are very close together, resulting in a narrow box.
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.5\textwidth, frame}
+			\includegraphics[scale=0.5]{C:/Users/khach/OneDrive/Desktop/XSTK/50.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Boxplot of Recommended Customer Price and Status}
+	\end{figure}
+	\\
+	There are also noticeable differences between these four boxes. The line-like Annouced box suggests a narrow range of values or very little variability in the data. Meanwhile, the line-like End of Interactive box with significant number of outliers above and below it suggests that the majority of data points are concentrated around a single value, with a few data points that deviate significantly from the central value. The other two boxes have very different ranges of value, minimums, maximums, and quartile values.
+	\section*{Comment:}
+	To address the issue caused by extreme outliers in the Recommended Customer Price, a transformation has been applied to the y-axis using the "log10" function. This helps to mitigate the impact of these extreme outliers, making the boxplots become clearer and easier to interpret.
+	\subsection{Correlation Coefficients Calculation}
+	\textbf{Input 1}
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	# Correlation matrix 
+	correlation_matrix <- round(cor(CPUs_data[, c("Lithography",
+	"Recommended_Customer_Price"
+	,"nb_of_Cores","nb_of_Threads","TDP"
+	,"Max_Memory_Size")]), 2)
+	print(correlation_matrix)
+	\end{lstlisting}
+	\textbf{Output 1}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=1\textwidth, frame}
+			\includegraphics[scale=1]{C:/Users/khach/OneDrive/Desktop/XSTK/71.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Table of Correlation Coefficients}
+	\end{figure}
+	\\
+	\textbf{Input 2}
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	corrplot(correlation_matrix, method = "number", type = "upper")
+	\end{lstlisting}
+	\textbf{Output 2}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/52.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Correlation coefficients between variables}
+	\end{figure}
+	\newpage
+	\section*{Comment:}
+	From the corrplot graph, we can analyze the relationships between the variables in the dataset. Lithography shows a very weak correlation with Recommended Customer Price (-0.09) and TDP (-0.11). There is also a weak negative correlation between Lithography and Number of Cores (-0.28), Number of Threads (-0.25), Processor Base Frequency (-0.31), and Max Memory Size (-0.21).\\
+	On the other hand, Recommended Customer Price demonstrates weak positive correlations with Number of Cores and moderate correlations with Number of Threads, implying that higher prices are related to greater numbers of cores and threads in the CPUs.\\
+	Furthermore, Number of Cores and Number of Threads exhibit a moderate positive correlation (0.57), indicating a close association between these variables. This suggests that CPUs with a higher number of cores are likely to have a higher number of threads as well.\\
+	Additionally, TDP and Max Memory Size show moderate positive correlations with Number of Cores, Number of Threads, and each other. This suggests that CPUs with higher thermal design power (TDP) values and larger maximum memory sizes tend to have more cores and threads.\\
+	Overall, the variables are weakly correlated, it can be predicted that the variables are independent.
+	\section{Inferential statistics}
+	\subsection{Multiple Linear Regression Model}
+	First, we assume that the assumptions for MLR Model are met. Then we start building the model as followings :\\
+	Our model can be described as the function:
+	\[
+	Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \ldots + \beta_n X_n + \epsilon
+	\]
+	\\Where:
+	\begin{itemize}
+		\item $Y$: dependent variable
+		\item $\beta_0$: intercept coefficient
+		\item $\beta_i$: regression coefficients
+		\item $X_i$: independent variables
+		\item $\epsilon$: error
+	\end{itemize}
+	We have two categorical variables:
+	\begin{itemize}
+		\item $\text{Vertical\_Segment}$ ($\text{Embedded}$, $\text{Mobile}$, $\text{Server}$, $\text{Desktop}$)
+		\item $\text{Status}$ ($\text{InteractiveSupport}$, $\text{Life}$, $\text{Launched}$, $\text{Announced}$)
+	\end{itemize}
+	From the data, we have the equation of the model:
+		\begin{align*}
+		\text{Recommended\_Customer\_Price} &= \beta_0 + (\beta_1 \text{Lithography}) + (\beta_2 \text{nb\_of\_Cores}) + (\beta_3 \text{nb\_of\_Threads}) \\
+		&\quad + (\beta_4 \text{Processor\_Base\_Frequency}) + (\beta_5 \text{TDP}) + (\beta_6 \text{Max\_Memory\_Size}) \\
+		&\quad + (\beta_7 \text{Embedded}) + (\beta_8 \text{Mobile}) + (\beta_9 \text{Server}) \\
+		&\quad + (\beta_{10} \text{InteractiveSupport}) + (\beta_{11} \text{Life}) + (\beta_{12} \text{Launched}) +\epsilon
+	\end{align*}
+	\\Then we have the estimation equation:
+	\begin{align*}
+		\text{Recommended\_Customer\_Price} &= \hat{\beta}_0 + (\hat{\beta}_1 \text{Lithography}) + (\hat{\beta}_2 \text{nb\_of\_Cores}) + (\hat{\beta}_3 \text{nb\_of\_Threads}) \\
+		&\quad + (\hat{\beta}_4 \text{Processor\_Base\_Frequency}) + (\hat{\beta}_5 \text{TDP}) + (\hat{\beta}_6 \text{Max\_Memory\_Size}) \\
+		&\quad + (\hat{\beta}_7 \text{Embedded}) + (\hat{\beta}_8 \text{Mobile}) + (\hat{\beta}_9 \text{Server}) \\
+		&\quad + (\hat{\beta}_{10} \text{InteractiveSupport}) + (\hat{\beta}_{11} \text{Life}) + (\hat{\beta}_{12} \text{Launched})
+	\end{align*}
+	\section*{Model 1}
+	\textbf{Input 1}
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	Model_1<-lm(Recommended_Customer_Price ~ Lithography + nb_of_Cores + nb_of_Threads + Processor_Base_Frequency + TDP + Max_Memory_Size + Vertical_Segment + Status, data=CPUs_data)
+	summary(Model_1)
+	\end{lstlisting}
+	\textbf{Output 1}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/56.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Linear Regression Model [1]}
+	\end{figure}
+	From the analysis result, we have:
+	\[
+	\hat{\beta}_0 = -244.6, \quad \hat{\beta}_1 = 0.006, \quad \hat{\beta}_2 = -3.477, \quad \hat{\beta}_3 = 25.49, \quad \hat{\beta}_4 = 0.0116, \quad \hat{\beta}_5 = 0.8394,
+	\]
+	\[
+	\hat{\beta}_6 = -0.1793, \quad \hat{\beta}_7 = 46.55, \quad \hat{\beta}_8 = 90.12, \quad \hat{\beta}_9 = 114.7, \quad \hat{\beta}_{10} = 285.7, \quad \hat{\beta}_{11} = 299.7, \quad \hat{\beta}_{12} = 268.8
+	\]
+	\[
+	\Rightarrow \text{Recommended\_Customer\_Price} = -244.6 + 0.006 \text{Lithography} - 3.477 \text{nb\_of\_Cores} + 25.49 \text{nb\_of\_Threads} + 0.0116 \text{Processor\_Base\_Frequency} + 0.8394 \text{TDP}
+	\]
+	\[
+	- 0.1793 \text{Max\_Memory\_Size} + 46.55 \text{Embedded} + 90.12 \text{Mobile} + 114.7 \text{Server} + 285.7 \text{InteractiveSupport} + 299.7 \text{Life} + 268.8 \text{Launched}
+	\]
+	Set test hypothesis:
+	\begin{itemize}
+		\item $H_0$: The regression coefficients are not statistically significant ($\beta_i = 0$)
+		\item $H_1$: The regression coefficients are statistically significant ($\beta_i \neq 0$)
+	\end{itemize}
+	Remark:\\
+	Some independent variables including Lithography, Processor\_Base\_Frequency, and Vertical\_SegmentEmbedded in the above multiple linear regression model have $p$-values > 5\%. Therefore, the condition to reject $H_0$ is not satisfied, meaning we still have to accept $H_0$, meaning these variables do not bring statistical significance to the above multiple linear regression model. Therefore, we need to remove them from the model in descending order of $p$-values.
+	\section*{Model 2}
+	Remove the variable Lithography from Model\_1\\
+	\textbf{Input 2}
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	Model_2<-lm(Recommended_Customer_Price ~ nb_of_Cores + nb_of_Threads + Processor_Base_Frequency + TDP + Max_Memory_Size + Vertical_Segment + Status, data=CPUs_data)
+	summary(Model_2)
+	\end{lstlisting}
+	\textbf{Output 2}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/57.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Linear Regression Model [2]}
+	\end{figure}
+	\section*{Model 3}
+	Remove the variable Processor\_Base\_Frequency from Model\_2\\
+	\textbf{Input 3}
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	Model_3<-lm(Recommended_Customer_Price ~ nb_of_Cores + nb_of_Threads + TDP + Max_Memory_Size + Vertical_Segment + Status, data=CPUs_data)
+	summary(Model_3)
+	\end{lstlisting}
+	\textbf{Output 3}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/58.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Linear Regression Model [3]}
+	\end{figure}
+	\section*{Model 4}
+	Remove the variable Vertical\_Segment  from Model\_3\\
+	\textbf{Input 4}
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	Model_4<-lm(Recommended_Customer_Price ~ nb_of_Cores + nb_of_Threads + TDP + Max_Memory_Size + Status, data=CPUs_data)
+	summary(Model_4)
+	\end{lstlisting}
+	\textbf{Output 4}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/59.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Linear Regression Model [4]}
+	\end{figure}
+	\newpage
+	\section*{Models Comparison}
+	\textbf{We compapre the Model\_1 and Model\_2:}\\
+	\textbf{Input 5}
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	anova(Model_1,Model_2)
+	\end{lstlisting}
+	\textbf{Output 5}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/60.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Linear Regression Model Comparison between Model 1 and 2}
+	\end{figure}
+	\\Set test hypothesis:
+	\begin{align*}
+	\text{Recommended\_Customer\_Price} = & \beta_0 + (\beta_1 \text{Lithography}) + (\beta_2 \text{nb\_of\_Cores}) + (\beta_3 \text{nb\_of\_Threads}) \\
+	& + (\beta_4 \text{Processor\_Base\_Frequency}) + (\beta_5 \text{TDP}) \\
+	& + (\beta_6 \text{Max\_Memory\_Size}) + (\beta_7 \text{Embedded}) + (\beta_8 \text{Mobile}) \\
+	& + (\beta_9 \text{Server}) + (\beta_{10} \text{InteractiveSupport}) + (\beta_{11} \text{Life}) + (\beta_{12} \text{Launched}) + \epsilon
+	\end{align*}
+
+	\begin{itemize}
+		\item $H_0$: Model\_2 is better ($\beta_1 = 0$)
+		\item $H_1$: Model\_1 is better ($\beta_1 \neq 0$)
+	\end{itemize}
+	
+	Remark:
+	$p$-value = 0.9788 > 5\%. Therefore, the condition to reject the null hypothesis $H_0$ is not satisfied, implying that Model\_2 is better.\\
+	\\
+	\textbf{We compare the Model\_2 and Model\_3}:\\
+	\textbf{Input 6}
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	anova(Model_2,Model_3)
+	\end{lstlisting}
+	\textbf{Output 6}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/60.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Linear Regression Model Comparison between Model 2 and 3}
+	\end{figure}
+	\\Set test hypothesis:
+	\begin{align*}
+		\text{Recommended\_Customer\_Price} = & \beta_0 + \beta_2 \text{nb\_of\_Cores} + \beta_3 \text{nb\_of\_Threads} + \beta_4 \text{Processor\_Base\_Frequency} \\
+		& + \beta_5 \text{TDP} + \beta_6 \text{Max\_Memory\_Size} \\
+		& + \beta_7 \text{Embedded} + \beta_8 \text{Mobile} + \beta_9 \text{Server} \\
+		& + \beta_{10} \text{InteractiveSupport} + \beta_{11} \text{Life} + \beta_{12} \text{Launched} + \epsilon
+	\end{align*}
+	\begin{itemize}
+		\item $H_0$: Model\_3 is better ($\beta_4 = 0$)
+		\item $H_1$: Model\_2 is better ($\beta_4 \neq 0$)
+	\end{itemize}
+	
+	Remark:
+	$p$-value = 0.3252 > 5\%. Therefore, the condition to reject the null hypothesis $H_0$ is not satisfied, implying that Model\_3 is better.\\
+	\\
+	\textbf{We compapre the Model\_3 and Model\_4}:\\
+	\textbf{Input 7}
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	anova(Model_3,Model_4)
+	\end{lstlisting}
+	\textbf{Output 7}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/61.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Linear Regression Model Comparison between Model 3 and 4}
+	\end{figure}
+	\\Set test hypothesis:
+	\begin{align*}
+		\text{Recommended\_Customer\_Price} = & \beta_0 + \beta_2 \text{nb\_of\_Cores} + \beta_3 \text{nb\_of\_Threads} + \beta_5 \text{TDP} + \beta_6 \text{Max\_Memory\_Size} \\
+		& + \beta_7 \text{Embedded} + \beta_8 \text{Mobile} + \beta_9 \text{Server} + \beta_{10} \text{InteractiveSupport} \\
+		& + \beta_{11} \text{Life} + \beta_{12} \text{Launched} + \epsilon
+	\end{align*}
+	\begin{itemize}
+		\item $H_0$: Model\_4 is better ($\beta_7 = \beta_8 = \beta_9 = 0$)
+		\item $H_1$: Model\_3 is better ($\beta_7 \neq 0$ or $\beta_8 \neq 0$ or $\beta_9 \neq 0$)
+	\end{itemize}
+	
+	Remark: 
+	$p$-value = $8.91 \times 10^{-8} < 5\%$. Therefore, the condition to reject the null hypothesis $H_0$ is satisfied, implying that Model\_3 is better.
+	
+	Therefore, the regression model that best fits is Model 3:
+	\begin{align*}
+	\text{Recommended\_Customer\_Price} &= \hat{\beta}_0 + \hat{\beta}_2 \text{nb\_of\_Cores} + \hat{\beta}_3 \text{nb\_of\_Threads} + \hat{\beta}_5 \text{TDP} + \hat{\beta}_6 \text{Max\_Memory\_Size} \\
+	&= -223.2211 - 4.219 \text{nb\_of\_Cores} + 25.4604 \text{nb\_of\_Threads} + 1.0202 \text{TDP} -
+	 \\
+	&\quad  0.1811 \text{Max\_Memory\_Size} + 39.6918 \text{Embedded} + 87.1752 \text{Mobile} \\
+	&\quad + 108.1675 \text{Server} + 281.9037 \text{InteractiveSupport} + 301.8432 \text{Life} \\
+	&\quad+ 273.1372 \text{Launched}
+	\end{align*}
+	Analyzing the impact of factors on the recommended customer price:
+	\begin{itemize}
+		\item First, we observe that the p-value associated with the model is $2.2 \times 10^{-16}$, which is highly significant. This indicates that there is at least one predictor variable that has a significant impact on explaining the Recommended\_Customer\_Price variable.
+		\item To examine the specific influence of each independent variable, we look at the corresponding $p$-values. We observe that four variables, \texttt{nb\_of\_Threads}, \texttt{Max\_Memory\_Size}, \texttt{Server}, and \texttt{Mobile}, have very low $p$-values, less than 0.05, with values of less than $2 \times 10^{-16}$, $4.39 \times 10^{-7}$, and $2.28 \times 10^{-5}$, respectively. This indicates that these three variables have a significant impact on the recommended price, while the remaining variables \texttt{TDP}, \texttt{Life}, \texttt{Launched}, \texttt{Life}, \texttt{InteractiveSupport}, and \texttt{nb\_of\_Cores} have less influence, and \texttt{Embedded} has no influence on the price.
+		\item Additionally, the regression coefficients ($\hat{B}_i$) of the variables are considered to have a moderate effect on the Recommended\_Customer\_Price. For example, if we have $\hat{\beta}_3 = 25.4604$, then when the number of Threads increases by 1, we can expect the Recommended\_Customer\_Price to increase by 25.4604 on average (assuming other predictor variables remain unchanged). The same applies to the other variables.
+		\item The Adjusted R-squared coefficient is 0.2153, meaning that 21.53\% of the variation in the Recommended\_Customer\_Price is explained by the independent variables included in the model.
+	\end{itemize}
+	
+	Checking the assumptions of the model:
+	\begin{itemize}
+		\item Linear relationship between the outcome and the predictors
+		\item Residuals are normally distributed: $\epsilon_i \sim N(0, \sigma^2)$
+		\item Residual errors have constant variance
+		\item Residual errors have a mean value of zero
+	\end{itemize}
+	\textbf{We conduct residual analysis to check the assumptions of the models:}\\
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	plot(Model_3)   #Draw residual plots
+	\end{lstlisting}
+	\textbf{Output of residual plots:}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/62.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Residuals and fitted plot}
+	\end{figure}
+	\\Linear Regression Plots: Fitted vs Residuals show the relationship between the fitted values (predicted values from the regression model) and the residuals (the differences between observed and predicted values).
+	
+	In this plot, the horizontal axis represents the fitted values, which are the predicted values of the response variable based on the regression model. The vertical axis represents the residuals, which are the discrepancies between the observed values and the fitted values.
+	
+	The main purpose of this plot is to assess the assumptions of linear regression:
+	\begin{itemize}
+		\item Linear relationship between the outcome and the predictors
+		\item Residual Errors have a mean value of zero
+		\item Residual Errors have constant variance
+	\end{itemize}
+	
+	Remark: 
+	\begin{itemize}
+		\item In the Residuals vs Fitted plot, we can see that the residual points are not all equally spread out, indicating that we failed to meet the assumption that Residual Errors have constant variance. The red line is almost horizontal and closely aligns with the line where residuals are equal to zero, indicating that it represents the assumption that there is a Linear relationship between the outcome and the predictors and Residual Errors have a mean value of zero.
+	\end{itemize}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/63.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Q-Q residuals plot}
+	\end{figure}
+	The Q-Q Residuals plot is used to assess the assumptions of linear regression to determine whether the residuals (the differences between observed and predicted values) follow a normal distribution. In this plot, the x-axis represents the theoretical quantiles of a normal distribution, while the y-axis represents the observed residuals. If the residuals follow a normal distribution, the points on the Q-Q plot will fall approximately along a straight line. Any deviations from this straight line suggest departures from normality in the residuals.
+	
+	Remark: 
+	\begin{itemize}
+		\item In the Q-Q Residuals plot, we can see many points deviate from the expected line of Normal Distribution, indicating that there are some differences between the data and the reference distribution. This would indicate that we failed to meet the assumption that Residuals are normally distributed.
+	\end{itemize}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/64.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Scale location plot}
+	\end{figure}
+	The Scale-Location plot is a diagnostic plot used in regression analysis to assess the assumption that Residual Errors have constant variance. In this plot, the x-axis typically represents the fitted values, while the y-axis represents the square root of the absolute residuals or standardized residuals. The square root transformation is applied to make the spread more symmetric around the mean and stabilize the variance across different levels of the predictor variables.
+	
+	Remark: 
+	\begin{itemize}
+		\item In the Scale-Location plot, we can see that the red line is not horizontal and the residual points are not all equally spread along the ranges of predictors, indicating that we failed to meet the assumption that Residual Errors have constant variance.
+	\end{itemize}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/65.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Residuals and leverage plot}
+	\end{figure}
+	A Residuals vs Leverage plot is a type of diagnostic plot that allows us to identify influential observations in a regression model. Each observation from the dataset is shown as a single point within the plot. The x-axis shows the leverage of each point, and the y-axis shows the standardized residual of each point. Leverage refers to the extent to which the coefficients in the regression model would change if a particular observation was removed from the dataset. Observations with high leverage have a strong influence on the coefficients in the regression model. If we remove these observations, the coefficients of the model would change noticeably.
+	
+	Remark: 
+	\begin{itemize}
+		\item In the Residuals vs Leverage plot, we can see that observation \#2130 lies closest to the border of Cook’s distance, but it doesn’t fall outside of the dashed line. This means there are not any influential points in our regression model.
+	\end{itemize}
+	Prediction:
+	
+	Model 3 has been determined to be the most suitable model for fitting the data, and as such, it will be utilized to predict the value of Recommended\_Customer\_Price.
+	\begin{align*}
+	\text{Recommended\_Customer\_Price} &= -223.2211 - 4.219 \text{nb\_of\_Cores} + 25.4604 \text{nb\_of\_Threads} \\
+	&\quad + 1.0202 \text{TDP} - 0.1811 \text{Max\_Memory\_Size} + 39.6918 \text{Embedded} \\
+	&\quad + 87.1752 \text{Mobile} + 108.1675 \text{Server} \\
+	&\quad + 281.9037 \text{InteractiveSupport} + 301.8432 \text{Life} \\
+	&\quad + 273.1372 \text{Launched}
+	\end{align*}
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	new_x = data.frame(CPUs_data[,c(1,2,3,5,6,7,8,9)])
+	new_x$pred_Price = predict(Model_3, new_x)
+	head(new_x$pred_Price, 10)
+	\end{lstlisting}
+	The Recommended\_Customer\_Price for the initial 10 observations will be predicted as follows:
+	\textbf{Result:}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/66.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Illustration of contribution of Recommended Customer Price for desktop CPUs}
+	\end{figure}
+	Based on the provided actual and predicted prices, we can make the following conclusions about the MLR (Multiple Linear Regression) model:
+		\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/67.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Illustration of contribution of Recommended Customer Price for desktop CPUs}
+	\end{figure}
+	\newpage
+	\begin{itemize}
+	\item [1.]The model's predictions are not always accurate: The predicted prices do not match the actual prices in most cases, indicating that the model may not be capturing all the relevant information or patterns in the data.
+	\item [2.]The model may have a tendency to overestimate or underestimate certain prices: For example, the predicted price for observation 3 is much lower than the actual price, while the predicted price for observation 9 is much higher. This suggests that the model may be biased in certain ranges of the data.
+	\item [3.]The model may be more accurate for certain types of observations: For instance, the predicted prices for observations 7 and 8 are relatively close to their actual values, while the predicted prices for observations 1 and 5 are further off. This could indicate that the model is better at predicting prices for certain types of products or in certain market conditions.
+	\end{itemize}
+
+	
+	Overall, based on this limited data, it is difficult to make definitive conclusions about the MLR model's performance. However, these observations suggest that there may be room for improvement in terms of model accuracy and further analysis would be needed to fully evaluate the model's strengths and weaknesses.
+	\newpage
+	\subsection{Two-way ANOVA Model}
+	Here, we will define our model as \textbf{Comparing the average Recommended Customer Price across different vertical segments and status}.\\ ANOVA (Analysis of Variance) model is based on certain assumptions. Adherence to these assumptions is crucial to ensure the validity of the analysis results.
+	\subsubsection{Normality}
+	To check whether it follows a normal distribution, we can use the Shapiro-Wilk test, which is implemented in R programming language through the shapiro.test() function. This test evaluates the null hypothesis that a sample comes from a normally distributed population.
+	\section*{Vertical Segment}
+	\begin{enumerate}
+		\item For desktop:
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	Desktop_data <- subset(CPUs_data,CPUs_data$Vertical_Segment=="Desktop")
+	shapiro.test(Desktop_data$Recommended_Customer_Price)
+	qqnorm(Desktop_data$Recommended_Customer_Price)
+	qqline(Desktop_data$Recommended_Customer_Price)
+	\end{lstlisting}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/68.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Shapiro-Wilk normality test of Recommended Customer Price for desktop CPUs}
+	\end{figure}
+	\begin{itemize}
+		\item Null hypothesis:
+		\( H_0 \): The recommended customer price of desktops follows a normal distribution.
+		\item Alternative hypothesis:
+		\( H_1 \): The recommended customer price of desktops does not follow a normal distribution.
+		\item Since the p-value < \(2.2 \times 10^{-16}\) (which is less than the significance level of 5\%), we reject the null hypothesis. Therefore, we conclude that the recommended customer price of desktops does not follow a normal distribution.
+		\begin{figure}[htbp]
+			\centering
+			\begin{adjustbox}{width=0.7\textwidth, frame}
+				\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/11.png}
+			\end{adjustbox}
+			\captionsetup{justification=centering}
+			\vspace{0.5cm}
+			\caption{Illustration of contribution of Recommended Customer Price for desktop CPUs}
+		\end{figure}
+		\item As the observations don't stick to the straight line, we can predict that the recommended customer price of desktops does not follow a normal distribution. This prediction matches with Shapiro- Wilk normality test.
+	\end{itemize}
+	\newpage
+		\item For mobile:
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	Mobile_data <- subset(CPUs_data, CPUs_data$Vertical_Segment == "Mobile")
+	shapiro.test(Mobile_data$Recommended_Customer_Price)
+	qqnorm(Mobile_data$Recommended_Customer_Price)
+	qqline(Mobile_data$Recommended_Customer_Price)
+	\end{lstlisting}
+		\begin{figure}[htbp]
+			\centering
+			\begin{adjustbox}{width=0.7\textwidth, frame}
+				\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/12.png}
+			\end{adjustbox}
+			\captionsetup{justification=centering}
+			\vspace{0.5cm}
+			\caption{Shapiro-Wilk normality test of Recommended Customer Price for mobile CPUs}
+		\end{figure}
+		\begin{itemize}
+			\item Null hypothesis:
+			\( H_0 \): The recommended customer price of mobile devices follows a normal distribution.
+			\item Alternative hypothesis:
+			\( H_1 \): The recommended customer price of mobile devices does not follow a normal distribution.
+			\item Since the p-value < \(2.2 \times 10^{-16}\) (which is less than the significance level of 5\%), we reject the null hypothesis. Therefore, we conclude that the recommended customer price of mobile devices does not follow a normal distribution.
+			\begin{figure}[htbp]
+				\centering
+				\begin{adjustbox}{width=0.7\textwidth, frame}
+					\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/13.png}
+				\end{adjustbox}
+				\captionsetup{justification=centering}
+				\vspace{0.5cm}
+				\caption{Illustration of contribution of Recommended Customer Price for mobile CPUs}
+			\end{figure}
+		\end{itemize}
+		\newpage
+		\item For server:
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	Server_data <- subset(CPUs_data,CPUs_data$Vertical_Segment=="Server")
+	shapiro.test(Server_data$Recommended_Customer_Price)
+	qqnorm(Server_data$Recommended_Customer_Price)
+	qqline(Server_data$Recommended_Customer_Price)
+	\end{lstlisting}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/14.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Shapiro-Wilk normality test of Recommended Customer Price for server CPUs}
+	\end{figure}
+	\begin{itemize}
+		\item Null hypothesis:
+		\( H_0 \): The recommended customer price of servers follows a normal distribution.
+			\item Alternative hypothesis:
+		\( H_1 \): The recommended customer price of servers does not follow a normal distribution.
+	\item Since the p-value < \(2.2 \times 10^{-16}\) (which is less than the significance level of 5\%), we reject the null hypothesis. Therefore, we conclude that the recommended customer price of servers does not follow a normal distribution.
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/15.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Illustration of contribution of Recommended Customer Price for server CPUs}
+	\end{figure}
+		\end{itemize}
+		\newpage
+		\item For embedded:
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	Embedded_data <- subset(CPUs_data, CPUs_data$Vertical_Segment == "Embedded")
+	shapiro.test(Embedded_data$Recommended_Customer_Price)
+	qqnorm(Embedded_data$Recommended_Customer_Price)
+	qqline(Embedded_data$Recommended_Customer_Price)
+	\end{lstlisting}
+		\begin{figure}[htbp]
+			\centering
+			\begin{adjustbox}{width=0.7\textwidth, frame}
+				\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/16.png}
+			\end{adjustbox}
+			\captionsetup{justification=centering}
+			\vspace{0.5cm}
+			\caption{Shapiro-Wilk normality test of Recommended Customer Price for embedded CPUs}
+		\end{figure}
+
+		\begin{itemize}
+		\item Null hypothesis:
+			\( H_0 \): The recommended customer price of embedded devices follows a normal distribution.
+		\item Alternative hypothesis:
+			\( H_1 \): The recommended customer price of embedded devices does not follow a normal distribution.
+			\item Since the p-value = \(4.825 \times 10^{-7}\) (which is less than the significance level of 5\%), we reject the null hypothesis. Therefore, we conclude that the recommended customer price of embedded devices does not follow a normal distribution.
+			\begin{figure}[htbp]
+				\centering
+				\begin{adjustbox}{width=0.7\textwidth, frame}
+					\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/17.png}
+				\end{adjustbox}
+				\captionsetup{justification=centering}
+				\vspace{0.5cm}
+				\caption{Illustration of contribution of Recommended Customer Price for embedded CPUs}
+			\end{figure}
+		\end{itemize}
+	\end{enumerate}
+	\newpage
+	\section*{Status}
+	\begin{enumerate}
+		\item For Announced:\\
+		Statistical analysis aims to uncover patterns, trends, or relationships within data, but if all the values are the same, there is no variation to analyze. Essentially, statistical analysis relies on differences and variability in data to draw meaningful conclusions. When there is no variability, there is no uncertainty or randomness to investigate, making further analysis unnecessary.\\
+		In statistics, if a dataset consists of constant values or lacks variability, there is no need for analysis because there is no information to be gained from such data. Here, Announced accompanies with a constant recommended price, that's why we won't take it into account.
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	Announced_data <- subset(CPUs_data,CPUs_data$Status=="Announced")
+	\end{lstlisting}
+		\begin{figure}[htbp]
+			\centering
+			\begin{adjustbox}{width=0.9\textwidth, frame}
+				\includegraphics[scale=0.9]{C:/Users/khach/OneDrive/Desktop/XSTK/Announced.png}
+			\end{adjustbox}
+			\captionsetup{justification=centering}
+			\vspace{0.5cm}
+			\caption{Announced\_data set}
+	\end{figure}
+		\item For End of Interactive Support:
+		\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+		End_of_Interactive_Support_data <- subset(CPUs_data,CPUs_data$Status=="End of Interactive Support")
+		shapiro.test(End_of_Interactive_Support_data$Recommended_Customer_Price)
+		qqnorm(End_of_Interactive_Support_data$Recommended_Customer_Price)
+		qqline(End_of_Interactive_Support_data$Recommended_Customer_Price)
+		\end{lstlisting}
+		\begin{figure}[htbp]
+			\centering
+			\begin{adjustbox}{width=0.7\textwidth, frame}
+				\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/24.png}
+			\end{adjustbox}
+			\captionsetup{justification=centering}
+			\vspace{0.5cm}
+			\caption{Shapiro-Wilk normality test of Recommended Customer Price for End of Interactive Support Status}
+		\end{figure}
+		\begin{itemize}
+			\item Null hypothesis:
+			\( H_0 \): The recommended customer price of End of Interactive Support status follows a normal distribution.
+			\item Alternative hypothesis:
+			\( H_1 \): The recommended customer price of End of Interactive Support status does not follow a normal distribution.
+			\item Since the p-value < \(2.2 \times 10^{-16}\) (which is less than the significance level of 5\%), we reject the null hypothesis. Therefore, we conclude that the recommended customer price of mobile devices does not follow a normal distribution.
+			\begin{figure}[htbp]
+				\centering
+				\begin{adjustbox}{width=0.7\textwidth, frame}
+					\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/25.png}
+				\end{adjustbox}
+				\captionsetup{justification=centering}
+				\vspace{0.5cm}
+				\caption{Illustration of contribution of Recommended Customer Price for End of Interactive Support status}
+			\end{figure}
+		\end{itemize}
+		\newpage
+		\item End of life:
+		\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+		End_of_Life_data <- subset(CPUs_data,CPUs_data$Status=="End of Life")
+		shapiro.test(End_of_Life_data$Recommended_Customer_Price)
+		qqnorm(End_of_Life_data$Recommended_Customer_Price)
+		qqline(End_of_Life_data$Recommended_Customer_Price)
+		\end{lstlisting}
+		\begin{figure}[htbp]
+			\centering
+			\begin{adjustbox}{width=0.7\textwidth, frame}
+				\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/26.png}
+			\end{adjustbox}
+			\captionsetup{justification=centering}
+			\vspace{0.5cm}
+			\caption{Shapiro-Wilk normality test of Recommended Customer Price for End of life status}
+		\end{figure}
+		\begin{itemize}
+			\item Null hypothesis:
+			\( H_0 \): The recommended customer price of End of life status follows a normal distribution.
+			\item Alternative hypothesis:
+			\( H_1 \): The recommended customer price of End of life status does not follow a normal distribution.
+			\item Since the p-value < \(2.2 \times 10^{-16}\) (which is less than the significance level of 5\%), we reject the null hypothesis. Therefore, we conclude that the recommended customer price of servers does not follow a normal distribution.
+			\begin{figure}[htbp]
+				\centering
+				\begin{adjustbox}{width=0.7\textwidth, frame}
+					\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/27.png}
+				\end{adjustbox}
+				\captionsetup{justification=centering}
+				\vspace{0.5cm}
+				\caption{Illustration of contribution of Recommended Customer Price for End of life status}
+			\end{figure}
+		\end{itemize}
+		\newpage
+		\item Launched:
+		\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+		Launched_data <- subset(CPUs_data,CPUs_data$Status=="Launched")
+		shapiro.test(Launched_data$Recommended_Customer_Price)
+		qqnorm(Launched_data$Recommended_Customer_Price)
+		qqline(Launched_data$Recommended_Customer_Price)
+		\end{lstlisting}
+		\begin{figure}[htbp]
+			\centering
+			\begin{adjustbox}{width=0.7\textwidth, frame}
+				\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/28.png}
+			\end{adjustbox}
+			\captionsetup{justification=centering}
+			\vspace{0.5cm}
+			\caption{Shapiro-Wilk normality test of Recommended Customer Price for Launched status}
+		\end{figure}
+		
+		\begin{itemize}
+			\item Null hypothesis:
+			\( H_0 \): The recommended customer price of Launcheds status follows a normal distribution.
+			\item Alternative hypothesis:
+			\( H_1 \): The recommended customer price of Launched status does not follow a normal distribution.
+			\item Since the p-value = \(2,.2 \times 10^{-16}\) (which is less than the significance level of 5\%), we reject the null hypothesis. Therefore, we conclude that the recommended customer price of embedded devices does not follow a normal distribution.
+			\begin{figure}[htbp]
+				\centering
+				\begin{adjustbox}{width=0.7\textwidth, frame}
+					\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/29.png}
+				\end{adjustbox}
+				\captionsetup{justification=centering}
+				\vspace{0.5cm}
+				\caption{Illustration of contribution of Recommended Customer Price for Launched status}
+			\end{figure}
+		\end{itemize}
+	\end{enumerate}
+	\newpage
+	\subsubsection{Equal variances}
+	\section*{Vertical segment}
+	 To test whether the variances of the Recommended Customer Price differ among different vertical segments, we can use the Levene's test. Here's how we can formulate the hypotheses and interpret the results:\\
+	 \textbf{Hypotheses:}
+	 \begin{itemize}
+	 	\item Null hypothesis (\( H_0 \)): The variances of Recommended Customer Price are equal across all vertical segments.
+	 	\item Alternative hypothesis (\( H_1 \)): At least two variances of Recommended Customer Price across different vertical segments are not equal.
+	 \end{itemize}
+	 \begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	 LeveneTest(Recommended_Customer_Price~as.factor(Vertical_Segment),CPUs_data)
+	 \end{lstlisting}
+	 \begin{figure}[htbp]
+	 	\centering
+	 	\begin{adjustbox}{width=0.7\textwidth, frame}
+	 		\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/30.png}
+	 	\end{adjustbox}
+	 	\captionsetup{justification=centering}
+	 	\vspace{0.5cm}
+	 	\caption{Leven's test on variances of vertical segment}
+	 \end{figure}
+	 \textbf{Interpretation:}
+	 \begin{itemize}
+	 	\item Since the p-value (\(2.2 \times 10^{-16}\)) is less than the significance level of 5\%, we reject the null hypothesis.
+	 	\item Therefore, we conclude that there is evidence to suggest that at least two variances of Recommended Customer Price across different vertical segments are not equal.
+	 \end{itemize}
+	 
+	 This implies that the variance of Recommended Customer Price differs significantly among the different vertical segments.
+	 \section*{Status}
+	 To test whether the variances of the Recommended Customer Price differ among different status, we can use the Levene's test. Here's how we can formulate the hypotheses and interpret the results:\\
+	 \textbf{Hypotheses:}
+	 \begin{itemize}
+	 	\item Null hypothesis (\( H_0 \)): The variances of Recommended Customer Price are equal across all status.
+	 	\item Alternative hypothesis (\( H_1 \)): At least two variances of Recommended Customer Price across different status are not equal.
+	 \end{itemize}
+	 \newpage
+	 \begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	 filtered_data <- subset(CPUs_data,CPUs_data$Status %in% c("End of Interactive Support","End of Life","Launched"))
+	 LeveneTest(Recommended_Customer_Price~as.factor(Status),filtered_data)
+	 \end{lstlisting}
+	 \begin{figure}[htbp]
+	 	\centering
+	 	\begin{adjustbox}{width=0.7\textwidth, frame}
+	 		\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/53.png}
+	 	\end{adjustbox}
+	 	\captionsetup{justification=centering}
+	 	\vspace{0.5cm}
+	 	\caption{Leven's test on variances of status}
+	 \end{figure}
+	 \textbf{Interpretation:}
+	 \begin{itemize}
+	 	\item Since the p-value (\(2.2 \times 10^{-16}\)) is less than the significance level of 5\%, we reject the null hypothesis.
+	 	\item Therefore, we conclude that there is evidence to suggest that at least two variances of Recommended Customer Price across different status are not equal.
+	 \end{itemize}
+	 
+	 This implies that the variance of Recommended Customer Price differs significantly among the different status.
+	\subsubsection{Independence of observations}
+    All observations of each column are taken separately, which means they are independent.
+	\subsubsection{Performing two-way ANOVA model}
+	We observe that assumption of normality and equal variance are not satisfied, making it inappropriate to apply a two-way ANOVA model.\\
+	Assuming that all assumptions are met, the results of this two-way ANOVA model are only for reference purposes.
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	anova_2_way_model <- aov(Recommended_Customer_Price~Vertical_Segment+Status,data=CPUs_data)
+	summary(anova_2_way_model)
+	\end{lstlisting}
+		\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/54.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Performing ANOVA model}
+	\end{figure}
+	\section*{Vertical segment}
+	\textbf{Hypotheses:}
+	\begin{itemize}
+		\item Null hypothesis (\(H_0\)): The mean of Recommended Customer Price is the same across all vertical segments.
+		\item Alternative hypothesis (\(H_1\)): At least two vertical segments have different mean of Recommended Customer Price.
+	\end{itemize}
+	\textbf{Interpretation:}
+	\begin{itemize}
+		\item Since the p-value (\( < 2 \times 10^{-16} \)) is less than the significance level of 5\%, we reject the null hypothesis.
+		\item Therefore, we conclude that there is evidence to suggest that at least two vertical segments have different mean Recommended Customer Price.
+	\end{itemize}
+	\section*{Status}
+	\textbf{Hypotheses:}
+	\begin{itemize}
+		\item Null hypothesis (\(H_0\)): The mean of Recommended Customer Price is the same across all status.
+		\item Alternative hypothesis (\(H_1\)): At least two status have different mean of Recommended Customer Price.
+	\end{itemize}
+	\textbf{Interpretation:}
+	\begin{itemize}
+		\item Since the p-value 0.0052 is less than the significance level of 5\%, we reject the null hypothesis.
+		\item Therefore, we conclude that there is evidence to suggest that at least two status have different mean Recommended Customer Price.
+	\end{itemize}
+	\subsubsection{Further analysis}
+	To further clarify the differences indicated by \( H_1 \), we conduct a deeper analysis using the Tukey's HSD method.
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+	TukeyHSD(anova_2_way_model)
+	\end{lstlisting}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/55.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Tukey multiple comparisons of means}
+	\end{figure}
+	\newpage
+	\textbf{DEEP ANALYSIS:}
+	\section*{Vertical segment}
+	\begin{itemize}
+		\item \textbf{Embedded-desktop}
+		\begin{itemize}
+			\item Null hypothesis:\\
+			\(H_0\): The mean of Recommended Customer Price of embedded and desktop are equal.
+			\item Alternative hypothesis:\\
+			\(H_1\): The mean of Recommended Customer Price of embedded and desktop are different.
+			\item P-value = 0.8574414 > significance level (5\%) => Accept \(H_0\) => The mean of Recommended Customer Price of embedded and desktop are equal.
+		\end{itemize}
+		
+		\item \textbf{Mobile-desktop}
+		\begin{itemize}
+			\item Null hypothesis:\\
+			\(H_0\): The mean of Recommended Customer Price of mobile and desktop are equal.
+			\item Alternative hypothesis:\\
+			\(H_1\): The mean of Recommended Customer Price of mobile and desktop are different.
+			\item P-value = 0.2513467 > significance level (5\%) => Accept \(H_0\) => The mean of Recommended Customer Price of mobile and desktop are equal.
+		\end{itemize}
+		
+		\item \textbf{Server-desktop}
+		\begin{itemize}
+			\item Null hypothesis:\\
+			\(H_0\): The mean of Recommended Customer Price of server and desktop are equal.
+			\item Alternative hypothesis:\\
+			\(H_1\): The mean of Recommended Customer Price of server and desktop are different.
+			\item P-value = 0 < significance level (5\%) => Reject \(H_0\) => The mean of Recommended Customer Price of server and desktop are different. Moreover, the difference equals mean of Recommended Customer Price of server - mean of Recommended Customer Price of desktop = 236.24390 > 0 => The mean of Recommended Customer Price of server is greater than the mean of Recommended Customer Price of desktop.
+		\end{itemize}
+		
+		\item \textbf{Mobile-embedded}
+		\begin{itemize}
+			\item Null hypothesis:\\
+			\(H_0\): The mean of Recommended Customer Price of mobile and embedded are equal.
+			\item Alternative hypothesis:\\
+			\(H_1\): The mean of Recommended Customer Price of mobile and embedded are different.
+			\item P-value = 0.9814066 > significance level (5\%) => Accept \(H_0\) => The mean of Recommended Customer Price of mobile and embedded are equal.
+		\end{itemize}
+		
+		\item \textbf{Server-embedded}
+		\begin{itemize}
+			\item Null hypothesis:\\
+			\(H_0\): The mean of Recommended Customer Price of server and embedded are equal.
+			\item Alternative hypothesis:\\
+			\(H_1\): The mean of Recommended Customer Price of server and embedded are different.
+			\item P-value = 0 < significance level (5\%) => Reject \(H_0\) => The mean of Recommended Customer Price of server and embedded are different. Moreover, the difference equals mean of Recommended Customer Price of server - mean of Recommended Customer Price of embedded = 212.09899 > 0 => The mean of Recommended Customer Price of server is greater than the mean of Recommended Customer Price of embedded.
+		\end{itemize}
+		\item \textbf{Server-mobile}
+		\begin{itemize}
+			\item Null hypothesis:\\
+			\(H_0\): The mean of Recommended Customer Price of server and mobile are equal.
+			\item Alternative hypothesis:\\
+			\(H_1\): The mean of Recommended Customer Price of server and mobile are different.
+			\item P-value = 0 < significance level (5\%) => Reject \(H_0\) => The mean of Recommended Customer Price of server and mobile are different. Moreover, the difference = mean Recommended Customer Price of server - mean of Recommended Customer Price of mobile = 200.77301 > 0 => The mean of Recommended Customer Price of server is greater than the mean of Recommended Customer Price of mobile.
+		\end{itemize}
+		\textbf{Comment:}
+		\\
+		Therefore, the recommended customer price of servers ($\text{Server}$) is greater than the recommended customer price of mobile devices ($\text{Mobile}$), which is equal to the recommended customer price of desktops ($\text{Desktop}$), and also equal to the recommended customer price of embedded systems ($\text{Embedded}$):
+		\[
+		\text{Server} > \text{Mobile} = \text{Desktop} = \text{Embedded}
+		\]
+		\section*{Status}
+		\item \textbf{End of Life - End of Interactive Support}
+		\begin{itemize}
+			\item Null hypothesis:\\
+			\(H_0\): The mean of Recommended Customer Price of End of Life and End of Interactive are equal.
+			\item Alternative hypothesis:\\
+			\(H_1\): The mean of Recommended Customer Price of End of Life and End of Interactive are different.
+			\item P-value = 0.5585007 > significance level (5\%) => Accept \(H_0\) => The mean of Recommended Customer Price of server and embedded are equal
+		\end{itemize}
+		\item \textbf{Launched - End of Interactive Support}
+		\begin{itemize}
+			\item Null hypothesis:\\
+			\(H_0\): The mean of Recommended Customer Price of Launched and End of Interactive Support are equal.
+			\item Alternative hypothesis:\\
+			\(H_1\): The mean of Recommended Customer Price of Launched and End of Interactive Support are different.
+			\item P-value = 0.1031490 > significance level (5\%) => Accept \(H_0\) => The mean of Recommended Customer Price of Launched and End of Interactive Support are equal
+		\end{itemize}
+		\item \textbf{Launched - End of Life}
+	\begin{itemize}
+		\item Null hypothesis:\\
+		\(H_0\): The mean of Recommended Customer Price of Launched and End of Life are equal.
+		\item Alternative hypothesis:\\
+		\(H_1\): The mean of Recommended Customer Price of Launched and End of Life are different.
+		\item P-value =0.0160826 < significance level (5\%) => Reject \(H_0\) => The mean of Recommended Customer Price of Launched and End of Life are different. Moreover, the difference = mean Recommended Customer Price of Launched - mean of Recommended Customer Price of End of Life = 55.95916 > 0 => The mean of Recommended Customer Price of Launched is greater than the mean of Recommended Customer Price of End of Life.
+	\end{itemize}
+	\textbf{Comment:}
+	\\
+	Therefore, the recommended customer price of products at the Launched stage ($\text{Launched}$) is greater than the recommended customer price of products at the End of Life stage ($\text{End of Life}$), which is equal to the recommended customer price of products at the End of Interactive Support stage ($\text{End of Interactive Support}$):
+	
+	\[
+	\text{Launched} > \text{End of Life} = \text{End of Interactive Support}
+	\]
+	\end{itemize}
+	For illustration of Tukey comparisons, we can do as followings
+	\begin{lstlisting}[frame=single, backgroundcolor=\color{gray!10}, breaklines=true, columns=fullflexible]
+		plot(TukeyHSD(anova_2_way_model))
+	\end{lstlisting}
+	\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/70.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Tukey multiple comparisons plot of means of vertical segment}
+	\end{figure}
+		\begin{figure}[htbp]
+		\centering
+		\begin{adjustbox}{width=0.7\textwidth, frame}
+			\includegraphics[scale=0.7]{C:/Users/khach/OneDrive/Desktop/XSTK/69.png}
+		\end{adjustbox}
+		\captionsetup{justification=centering}
+		\vspace{0.5cm}
+		\caption{Tukey multiple comparisons plt of means of status}
+	\end{figure}
+	\section{Discussion and Extension}
+	\subsection{Discussion}
+	\subsubsection{Advantages of Multiple Linear Regression (MLR)}
+	\begin{enumerate}
+		\item Multiple Predictors: MLR allows us to model the relationship between multiple predictor variables and a response variable, which can provide a more complete picture of the relationship between variables than simple linear regression.
+		
+		\item Predictive Power: MLR can be very effective for making predictions about a response variable based on multiple predictor variables.
+		
+		\item Interpretability: MLR provides coefficients for each predictor variable, which can be interpreted to understand the relationship between each predictor and the response variable.
+		
+		\item Handling of Quantitative and Qualitative Variables: MLR can handle both quantitative and qualitative predictor variables, which can be useful in a wide range of applications.
+	\end{enumerate}
+	\subsubsection{Disadvantages of Multiple Linear Regression (MLR)}
+	\begin{enumerate}
+		\item Assumptions: MLR relies on several assumptions, such as linearity, independence, homoscedasticity, and normality. Violations of these assumptions can lead to incorrect inferences and predictions.
+		
+		\item Overfitting: If we include too many predictor variables in our model, we can run the risk of overfitting the data, which can lead to poor performance on new data.
+		
+		\item Multicollinearity: If our predictor variables are highly correlated, it can lead to unstable estimates of the regression coefficients.
+		
+		\item Outliers: MLR can be sensitive to outliers, which can have a big impact on the estimates of the regression coefficients.
+		
+		\item Non-linear Relationships: MLR assumes a linear relationship between the predictor variables and the response variable. If this assumption is violated, the model may not provide an accurate representation of the relationship between the variables.
+	\end{enumerate}
+	\subsubsection{Advantages of Analysis of Variance (ANOVA)}
+	\begin{enumerate}
+		\item Comparing Multiple Groups: ANOVA allows researchers to compare means across three or more groups simultaneously, which can save time and reduce the chances of making type I errors.
+		
+		\item Identifying Significant Differences: ANOVA helps identify whether there is a statistically significant difference between the means of the groups being compared.
+		
+		\item Understanding Factor Effects: In experimental designs or observational studies with multiple independent variables, ANOVA enables researchers to understand the impact of each factor on the dependent variable.
+		
+		\item Flexibility: ANOVA comes in various forms, such as one-way ANOVA, two-way ANOVA, and factorial ANOVA, which allows researchers to choose the appropriate model based on the complexity of their data and research question.
+		
+		\item Provides Detailed Analysis: ANOVA provides a detailed breakdown of variances and interactions between variables which can be useful in understanding the underlying factors affecting the outcome.
+	\end{enumerate}
+	\subsubsection{Disadvantages of Analysis of Variance (ANOVA)}
+	\begin{enumerate}
+		\item Assumptions: ANOVA relies on several assumptions, such as normality of the residuals, homoscedasticity of the residuals, and independence of observations. Violations of these assumptions can lead to incorrect inferences.
+		
+		\item Post-hoc Tests: If the null hypothesis is rejected, researchers may need to conduct post-hoc tests to identify which specific group means differ significantly from one another, which can increase the risk of type I error (false positive conclusion).
+		
+		\item Non-linear Relationships: ANOVA assumes a linear relationship between the predictor variables and the response variable. If this assumption is violated, the model may not provide an accurate representation of the relationship between the variables.
+		
+		\item Outliers: ANOVA can be sensitive to outliers. A single extreme value in one group can affect the sum of squares and consequently influence the F-statistic and the overall result of the test.
+		
+		\item Requires Larger Sample Sizes: To detect an effect of a certain size, ANOVA generally requires larger sample sizes than a t-test.
+	\end{enumerate}
+	\subsection{Extension}
+	Missing data handling is a pivotal aspect of statistical analysis, exerting a profound influence on the outcomes and reliability of models. In the context of our selected dataset, which exhibits a substantial proportion of missing values (exceeding 10\% of the total values), we address this challenge through mean and median imputation methods. Specifically, we apply these imputation techniques to ANOVA 2-Way and Multiple Linear Regression models. Furthermore, we introduce an alternative strategy wherein missing values are entirely excluded, creating a scenario akin to a dataset devoid of any missing values.\\
+	Our objective is to delve into how the choice of missing value handling methods impacts the outcomes of statistical models. By juxtaposing the results derived from imputed datasets against those obtained through the complete dataset approach, we aim to discern the nuanced effects on model outcomes stemming from various missing value handling techniques.\\
+	In essence, this study endeavors to offer comprehensive insights into the ramifications of missing data imputation strategies on the reliability and interpretability of statistical models. Through meticulous comparison and analysis, we strive to elucidate the most effective approaches for addressing missing data issues, thereby enhancing the robustness of statistical analyses in empirical research.
+	\section{Code and data availability}
+	The source code can be accessed here : \href{https://drive.google.com/file/d/1Il4iC7faB02F3UE7uU0fYfBMuZrJhS0D/view?usp=sharing}{Code\_R}
+	\\The source data can be accessed here: \href{https://drive.google.com/file/d/1i2Abu2gYUc_WXi9VG8lIduRie_3jNC4r/view?usp=sharing}{CPUs.csv}
+	
+	\section{Conclusion}
+	\hspace{1.5em}Under the expert guidance of Mr. Dung during our classes, we've adeptly navigated through the intricate realm of ANOVA model and Regression model, with a specific focus on the challenging domain of Probability and Statistics. This note serves as an expression of our deep gratitude for the insightful assignment that delved into the nuances of this complex field.
+	
+	The assignment, centered around exploring the relationships between variables in real-world datasets, has been instrumental in broadening our understanding of statistical analysis and its practical applications. The thought-provoking nature of the tasks assigned has not only strengthened our grasp on stochastic programming but has also played a pivotal role in the development of critical skills crucial for our academic and professional journey.
+	
+	The exposure to the complexities of analyzing data and drawing meaningful conclusions has proven invaluable, providing us with a profound comprehension of advanced statistical techniques. Your commitment to presenting stimulating assignments has been a catalyst for our academic and professional growth. We genuinely appreciate the effort you invest in guiding us through challenging yet rewarding tasks. Once again, thank you for this enriching and enlightening experience!
+	\newpage
+	\section{References}
+		
+	\begin{thebibliography}{99}
+		\bibitem[1]{hayes23} Adam Hayes, December 20th, 2023. “Multiple Linear Regression (MLR) Definition, Formula, and Example”. \textit{Investopedia}. Available online: \url{https://www.investopedia.com/terms/m/mlr.asp}
+		\bibitem[2]{bevans23} Rebecca Bevans, June 22nd, 2023. “Multiple Linear Regression | A Quick Guide (Examples)”. \textit{Scribbr}. Available online: \url{https://www.scribbr.com/statistics/multiple-linear-regression/}
+		\bibitem[3]{blokhin23} Andriy Blokhin, August 13th, 2023. “Linear vs. Multiple Regression: What's the Difference?”. \textit{Investopedia}. Available online: \url{https://www.investopedia.com/ask/answers/060315/what-difference-between-linear-regression-and-multiple-regression.asp}
+		\bibitem[4]{hassan24} Muhammad Hassan, March 26th, 2024. “ANOVA (Analysis of variance) – Formulas, Types, and Examples”. Available online: \url{https://researchmethod.net/anova/}
+		\bibitem[5]{kenton24} Will Kenton, February 26th, 2024. “Analysis of Variance (ANOVA) Explanation, Formula, and Applications”. \textit{Investopedia}. Available online: \url{https://www.investopedia.com/terms/a/anova.asp}
+		\bibitem[6]{bobbitt21} Zach Bobbitt, March 31st, 2021. “One-Way vs. Two-Way ANOVA: When to Use Each”. Available online: \url{https://www.statology.org/one-way-vs-two-way-anova/}
+		\bibitem[7]{mojo24} Wallstreetmojo Team, March 14th, 2024. “Regression vs ANOVA”. \textit{Wallstreetmojo}. Available online: \url{https://www.wallstreetmojo.com/regression-vs-anova/}
+		\bibitem[8]{gianfranco19} Gianfranco, March 22nd, 2019. “What is the difference between ANOVA and regression (and which one to choose)”. Available online: \url{https://www.statsimprove.com/en/what-is-the-difference-between-anova-and-regression-and-which-one-to-choose/}
+		\bibitem[9]{cuemath} Cuemath. “Hypothesis Testing - Definition , Examples, Formula, Types”. Available online: \url{https://www.cuemath.com/data/hypothesis-testing/}
+		\bibitem[10]{knuth86} Donald E. Knuth. \textit{The \TeX{} Book}. Addison-Wesley Professional, 1986.
+		\bibitem[11]{lamport94} Leslie Lamport. \textit{\LaTeX{}: a Document Preparation System}. Addison Wesley, Massachusetts, 2nd edition, 1994.
+		\bibitem[12]{mittelbach04} Frank Mittelbach, Michel Gossens, Johannes Braams, David Carlisle, and Chris Rowley. \textit{The \LaTeX{} Companion}. Addison-Wesley Professional, 2nd edition, 2004.
+		\bibitem[13]{mittelbach04} Helmut Kopka, Patrick W. Daly. \textit{A Guide to \LaTeX{} and Electronic Publishing}. Addison-Wesley Long Man Limited, 4th edition, 2004.
+	\end{thebibliography}
+	
+		
+		
+	\end{document}
+	
